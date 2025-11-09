@@ -38,9 +38,12 @@ class CVParsed(BaseModel):
     This schema is based on the project requirements .
     """
     
-    name: str = Field(description="The full name of the candidate.")
-    
-    contact: CandidateContact = Field(description="Candidate's contact information.")
+    # Name and contact can sometimes be missing or hard to detect.
+    name: Optional[str] = Field(None, description="The full name of the candidate.")
+
+    # Provide a default CandidateContact so downstream code can assume a contact object exists
+    # (fields inside are optional). This avoids crashes when parsers fail to extract contact info.
+    contact: CandidateContact = Field(default_factory=CandidateContact, description="Candidate's contact information.")
     
     professional_summary: Optional[str] = Field(None, description="A brief professional summary from the CV, if present.")
 

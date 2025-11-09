@@ -177,3 +177,7 @@ websockets==15.0.1
 wrapt==1.17.3
 yarl==1.22.0
 zipp==3.23.0
+
+# NLP helpers for deterministic parsing
+spacy==3.8.6
+dateparser==1.1.8
