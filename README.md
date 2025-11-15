@@ -245,29 +245,8 @@ See [**DOCKER_SETUP.md**](./DOCKER_SETUP.md) for detailed troubleshooting.
 
 ## Known Limitations
 
-- **No RBAC yet** – Single API key; admin/recruiter roles not enforced
+- **Login** – Single API key; admin/recruiter roles can be changed in the UI without logins
 - **Streaming chat** – Responses are buffered, not streamed token-by-token
-- **PDF reports** – Export is CSV/JSON only; formatted PDF reports not yet supported
-- **Resume offsets** – Citation source offsets are approximate
-- **Fuzzy dedupe** – Deduplication uses email/phone only; name similarity not implemented
+- **Parsing** – The parsing is not fully accurate due to the model limitations
 
 See the [Issue Tracker](https://github.com/A190nux/ats/issues) for roadmap and feature requests.
-
-## License
-
-MIT
-
-## Contributing
-
-Pull requests welcome! Please:
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Commit changes (`git commit -m "Add my feature"`)
-4. Push to branch (`git push origin feature/my-feature`)
-5. Open a Pull Request
-
-## Support
-
-- **Documentation**: See `DOCKER_SETUP.md` for deployment details
-- **Issues**: Report bugs on [GitHub Issues](https://github.com/A190nux/ats/issues)
-- **Discussion**: Start a [GitHub Discussion](https://github.com/A190nux/ats/discussions)
