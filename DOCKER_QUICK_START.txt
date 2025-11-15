@@ -1,0 +1,72 @@
+================================================================================
+DOCKER DEPLOYMENT - QUICK START
+================================================================================
+
+WHAT WAS ADDED:
+---------------
+1. Dockerfile.api          - FastAPI backend image with OCR/PDF support
+2. Dockerfile.web          - Streamlit web UI image
+3. docker-compose.yml      - Orchestration of all services
+4. .dockerignore           - Optimized Docker build context
+5. .env.example            - Environment variable template
+6. DOCKER_SETUP.md         - Comprehensive deployment guide
+7. README.md               - Updated with Docker quickstart
+
+================================================================================
+GET STARTED IN 3 STEPS:
+================================================================================
+
+Step 1: Start the stack
+$ docker-compose up -d
+
+Step 2: Pull the LLM model (takes 5-30 min first time)
+$ docker exec ats-ollama ollama pull phi4-mini:latest
+
+Step 3: Open Web UI
+http://localhost:8501
+
+================================================================================
+WHAT'S RUNNING:
+================================================================================
+
+✓ API (FastAPI)        http://localhost:8000    (/docs for Swagger UI)
+✓ Web UI (Streamlit)   http://localhost:8501
+✓ Ollama (LLM)         http://localhost:11434
+
+Data persists in:
+  - ./data/                 (uploaded CVs, queue DB)
+  - ./chroma_db/            (vector embeddings)
+  - ./ollama_models/        (LLM models)
+
+================================================================================
+COMMON COMMANDS:
+================================================================================
+
+View logs:
+$ docker-compose logs -f
+
+Stop all services:
+$ docker-compose down
+
+Clean up (WARNING: deletes all data):
+$ docker-compose down -v
+
+Check service status:
+$ docker-compose ps
+
+Rebuild images after code changes:
+$ docker-compose build
+$ docker-compose up -d
+
+================================================================================
+NEXT:
+================================================================================
+
+See DOCKER_SETUP.md for:
+- GPU acceleration setup
+- Environment variable configuration
+- Troubleshooting
+- Non-Docker local setup instructions
+- Data backup procedures
+
+================================================================================

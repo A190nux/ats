@@ -1,0 +1,27 @@
+{
+  "job_title": "Senior Python Developer",
+  "company": null,
+  "department": null,
+  "location": null,
+  "skills": {
+    "must_have": [
+      "FastAPI",
+      "SQL"
+    ],
+    "nice_to_have": []
+  },
+  "education": {
+    "degree_level": null,
+    "fields_of_study": []
+  },
+  "experience": {
+    "minimum_years": 5,
+    "preferred_years": null
+  },
+  "description": "Senior Python Developer with 5+ years experience. Must know FastAPI and PostgreSQL.",
+  "responsibilities": [],
+  "benefits": null,
+  "salary_range": null,
+  "created_at": "2025-11-14T18:25:33.162118",
+  "source_file": null
+}

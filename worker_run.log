@@ -1,0 +1,80 @@
+2025-11-14 13:01:20,633 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 13:01:20,634 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 13:02:05,641 - __main__ - INFO - Found pending job: add37e1d-d37b-4be6-aaae-223efe3b6b56
+2025-11-14 13:02:08,235 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 13:02:08,236 - __main__ - INFO - Processing job add37e1d-d37b-4be6-aaae-223efe3b6b56: cv_uploads/Seif_El_Din_Essam_CV.pdf
+2025-11-14 13:02:08,244 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 13:02:08,671 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 13:02:08,671 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 13:02:08,978 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 13:02:08,979 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 13:02:09,110 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 13:02:09,110 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-14 13:02:09,445 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-14 13:02:09,445 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-14 13:02:09,772 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-14 13:02:09,773 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-14 13:02:09,965 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-14 13:02:09,965 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 13:02:10,265 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 13:02:10,265 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-14 13:02:10,377 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-14 13:02:10,377 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-14 13:02:10,784 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-14 13:02:10,784 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-14 13:02:10,893 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-14 13:02:10,893 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 13:02:10,956 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 13:02:10,956 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-14 13:02:11,216 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-14 13:02:11,216 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-14 13:02:11,481 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-14 13:02:11,481 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-14 13:02:11,562 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-14 13:02:11,562 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-14 13:02:11,909 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-14 13:02:11,909 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-14 13:02:12,200 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-14 13:02:12,200 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-14 13:02:12,343 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-14 13:02:12,344 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-14 13:02:12,542 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-14 13:02:12,542 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-14 13:02:12,706 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-14 13:02:12,706 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-14 13:02:12,842 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-14 13:02:12,843 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-14 13:02:13,172 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-14 13:02:13,173 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-14 13:02:13,452 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-14 13:02:13,452 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 13:02:13,570 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 13:02:13,570 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-14 13:02:13,811 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-14 13:02:13,811 - backend.ingest.loader - INFO - Total documents loaded: 24
+2025-11-14 13:02:22,088 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 13:02:40,243 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 13:02:40,265 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 13:02:40,496 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 13:02:40,595 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 13:05:24,767 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:05:25,813 - __main__ - INFO -   ✓ Parsed and saved: Suhaila Ahmed Hassan_CV.pdf
+2025-11-14 13:06:55,378 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:07:07,616 - __main__ - INFO -   ✓ Parsed and saved: Seif_El_Din_Essam_CV.pdf
+2025-11-14 13:08:56,597 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:08:56,603 - __main__ - INFO -   ✓ Parsed and saved: Toka Ayman Rashed_CV.pdf
+2025-11-14 13:10:19,789 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:10:19,812 - __main__ - INFO -   ✓ Parsed and saved: Mario Habib Fathi CV.pdf
+2025-11-14 13:12:16,782 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:12:16,798 - __main__ - INFO -   ✓ Parsed and saved: mayar-mostafa-hassan-resume.pdf
+2025-11-14 13:13:41,622 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:13:41,627 - __main__ - INFO -   ✓ Parsed and saved: Mohamed Mohy El Deen Lotfy - CV.pdf
+2025-11-14 13:15:09,250 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:15:44,376 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:15:44,379 - __main__ - INFO -   ✓ Parsed and saved: Sherif_Shawky_CV.pdf
+2025-11-14 13:17:25,241 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:17:25,254 - __main__ - INFO -   ✓ Parsed and saved: cvvv.pdf
+2025-11-14 13:19:52,098 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:19:52,107 - __main__ - INFO -   ✓ Parsed and saved: Israa Mohamed Gaber.pdf
+2025-11-14 13:21:49,699 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:21:49,709 - __main__ - INFO -   ✓ Parsed and saved: Aly Mohamed Aly.pdf

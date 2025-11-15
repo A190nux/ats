@@ -1,0 +1,37 @@
+{
+  "job_title": "None",
+  "company": null,
+  "department": null,
+  "location": null,
+  "skills": {
+    "must_have": [
+      "Programming languages such as Python",
+      "Strong programming skills"
+    ],
+    "nice_to_have": []
+  },
+  "education": {
+    "degree_level": null,
+    "fields_of_study": [
+      "Machine learning concepts, algorithms and frameworks (e.g., Scikit-learn, TensorFlow, PyTorch)",
+      "Statistics",
+      "Linear algebra",
+      "Calculus"
+    ]
+  },
+  "experience": {
+    "minimum_years": null,
+    "preferred_years": null
+  },
+  "description": "esigning, building, and deploying AI systems that can learn from data. Key duties include cleaning and preparing data, developing and testing models, optimizing performance, and integrating them into applications for real-world use. This role requires strong programming skills (often in Python) and a solid foundation in math, statistics, and machine learning frameworks. \nCore responsibilities\n\n    Design and build ML systems: Create and prototype AI algorithms and end-to-end ML systems, from dat...",
+  "responsibilities": [
+    "Designing, building and deploying AI systems that can learn from data.",
+    "Handling data preprocessing, feature engineering, and data cleaning to prepare datasets for model training",
+    "Developing machine learning models using various frameworks like TensorFlow or PyTorch",
+    "Deploying models into production, build scalable ML pipelines, implement monitoring and retraining strategies to maintain performance"
+  ],
+  "benefits": null,
+  "salary_range": null,
+  "created_at": "2025-11-14T18:34:59.684042",
+  "source_file": null
+}

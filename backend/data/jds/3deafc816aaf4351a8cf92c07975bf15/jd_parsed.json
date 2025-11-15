@@ -1,0 +1,43 @@
+{
+  "job_title": "Senior Python Developer",
+  "company": "TechCorp",
+  "department": null,
+  "location": "San Francisco, CA",
+  "skills": {
+    "must_have": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Git"
+    ],
+    "nice_to_have": [
+      "Docker",
+      "AWS",
+      "Redis",
+      "Kubernetes"
+    ]
+  },
+  "education": {
+    "degree_level": "Bachelor",
+    "fields_of_study": [
+      "Computer Science",
+      "Engineering"
+    ]
+  },
+  "experience": {
+    "minimum_years": 5,
+    "preferred_years": 8
+  },
+  "description": "\n    Senior Python Developer - TechCorp\n    \n    Location: San Francisco, CA\n    \n    We are looking for a Senior Python Developer with 5+ years of experience to join our backend team.\n    \n    Requirements:\n    Must Have:\n    - 5+ years Python experience\n    - FastAPI or Django expertise\n    - PostgreSQL knowledge\n    - Git proficiency\n    \n    Nice to Have:\n    - Docker experience\n    - AWS or GCP knowledge\n    - Redis experience\n    - Kubernetes basics\n    \n    Education:\n    - Bachelor's deg",
+  "responsibilities": [
+    "Design and implement scalable APIs",
+    "Write maintainable, tested code",
+    "Collaborate with data science team",
+    "Code review and mentoring",
+    "Participate in architecture decisions"
+  ],
+  "benefits": "Competitive salary ($150k-$180k), health insurance, flexible remote work",
+  "salary_range": "$150k-$180k",
+  "created_at": "2025-11-14T17:28:05.411996",
+  "source_file": null
+}

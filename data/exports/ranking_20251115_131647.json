@@ -1,0 +1,58 @@
+{
+  "exported_at": "2025-11-15T13:16:47.431593",
+  "jd": {
+    "job_title": "Senior Python Developer",
+    "company": "Tech Corp",
+    "skills": {
+      "must_have": [
+        "Python",
+        "Docker"
+      ],
+      "nice_to_have": [
+        "FastAPI",
+        "Kubernetes"
+      ]
+    }
+  },
+  "results": [
+    {
+      "rank": 1,
+      "candidate_name": "John Doe",
+      "final_score": 0.92,
+      "rule_score": 0.88,
+      "semantic_score": 0.96,
+      "matched_must": [
+        "Python",
+        "Docker"
+      ],
+      "matched_nice": [
+        "FastAPI"
+      ],
+      "missing_must": [],
+      "resume_id": "res-001"
+    },
+    {
+      "rank": 2,
+      "candidate_name": "Jane Smith",
+      "final_score": 0.87,
+      "rule_score": 0.85,
+      "semantic_score": 0.89,
+      "matched_must": [
+        "Python"
+      ],
+      "matched_nice": [
+        "Docker",
+        "FastAPI"
+      ],
+      "missing_must": [
+        "Kubernetes"
+      ],
+      "resume_id": "res-002"
+    }
+  ],
+  "summary": {
+    "total_candidates": 2,
+    "top_score": 0,
+    "avg_score": 0.0
+  }
+}

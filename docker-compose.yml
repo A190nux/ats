@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend - Handles CV ingestion, JD parsing, RAG, and ranking
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: ats-api
+    ports:
+      - "8000:8000"
+    environment:
+      API_KEY: ${API_KEY:-test-key-123}
+      QUEUE_DB: /app/data/jobs.db
+      UPLOAD_DIR: /app/data/cv_uploads
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+    depends_on:
+      - ollama
+    networks:
+      - ats-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Streamlit Web UI
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: ats-web
+    ports:
+      - "8501:8501"
+    environment:
+      STREAMLIT_SERVER_HEADLESS: "true"
+      STREAMLIT_SERVER_PORT: "8501"
+      STREAMLIT_SERVER_ADDRESS: "0.0.0.0"
+      API_URL: http://api:8000
+      API_KEY: ${API_KEY:-test-key-123}
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - api
+    networks:
+      - ats-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Ollama - Local LLM service (for parsing and RAG)
+  # Note: requires GPU support via docker --gpus flag or will run on CPU (slow)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ats-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama_models:/root/.ollama
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+    networks:
+      - ats-net
+    # Optional: uncomment if running on a machine with NVIDIA GPU
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+networks:
+  ats-net:
+    driver: bridge
+
+volumes:
+  data:
+  chroma_db:
+  ollama_models:

@@ -1,0 +1,28 @@
+{
+  "job_title": "Senior Python Developer",
+  "company": null,
+  "department": null,
+  "location": null,
+  "skills": {
+    "must_have": [
+      "FastAPI",
+      "Python",
+      "SQL"
+    ],
+    "nice_to_have": []
+  },
+  "education": {
+    "degree_level": null,
+    "fields_of_study": []
+  },
+  "experience": {
+    "minimum_years": 5,
+    "preferred_years": 7
+  },
+  "description": "Senior Python Developer needed. Must have: Python, FastAPI, PostgreSQL. Nice to have: Docker, Kubernetes. 5+ years experience required.",
+  "responsibilities": [],
+  "benefits": null,
+  "salary_range": null,
+  "created_at": "2025-11-14T18:34:19.548311",
+  "source_file": null
+}

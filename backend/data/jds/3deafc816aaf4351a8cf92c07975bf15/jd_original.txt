@@ -1,0 +1,36 @@
+
+    Senior Python Developer - TechCorp
+    
+    Location: San Francisco, CA
+    
+    We are looking for a Senior Python Developer with 5+ years of experience to join our backend team.
+    
+    Requirements:
+    Must Have:
+    - 5+ years Python experience
+    - FastAPI or Django expertise
+    - PostgreSQL knowledge
+    - Git proficiency
+    
+    Nice to Have:
+    - Docker experience
+    - AWS or GCP knowledge
+    - Redis experience
+    - Kubernetes basics
+    
+    Education:
+    - Bachelor's degree in Computer Science or related field
+    
+    Responsibilities:
+    - Design and implement scalable APIs
+    - Write maintainable, tested code
+    - Collaborate with data science team
+    - Code review and mentoring
+    - Participate in architecture decisions
+    
+    Benefits:
+    - Competitive salary ($150k-$180k)
+    - Health insurance
+    - Flexible remote work
+    - Professional development budget
+    

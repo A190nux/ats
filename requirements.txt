@@ -181,3 +181,27 @@ zipp==3.23.0
 # NLP helpers for deterministic parsing
 spacy==3.8.6
 dateparser==1.1.8
+
+# Document format support
+python-docx==1.0.2
+mammoth==0.3.15
+striprtf==0.0.26
+
+# OCR support for scanned PDFs and images
+pdf2image==1.17.0
+
+# API and web framework
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.7
+pydantic==2.10.5
+streamlit==1.41.1
+requests==2.32.3
+
+# Export & Report generation
+pandas==2.2.3
+openpyxl==3.11.0
+reportlab==4.0.9
+
+# Fuzzy matching for normalization (optional, falls back to simple heuristics)
+rapidfuzz

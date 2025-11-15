@@ -3,7 +3,6 @@ __pycache__
 *.pyo
 *.pyd
 env/
-.env/
 venv/
 .venv/
 build/
@@ -12,4 +11,3 @@ dist/
 chroma_db/
 cv_uploads/
 *.sqlite3
-chroma_db/

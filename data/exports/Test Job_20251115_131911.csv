@@ -1,0 +1,3 @@
+Rank,Candidate Name,Score,Matched Must-Have,Matched Nice-to-Have,Missing Must-Have
+1,John Doe,92.0%,"Python, Docker",FastAPI,None
+2,Jane Smith,87.0%,Python,"Docker, FastAPI",Kubernetes

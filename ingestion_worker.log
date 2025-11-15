@@ -1,0 +1,992 @@
+2025-11-13 18:22:15,721 - backend.ingest.queue - INFO - Queue database initialized at ./test_worker.db
+2025-11-13 18:22:15,721 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 18:22:15,722 - __main__ - INFO - One-time mode: no pending jobs, exiting
+2025-11-13 18:22:43,331 - backend.ingest.queue - INFO - Queue database initialized at /tmp/tmpekjscc0s/e2e_test.db
+2025-11-13 18:22:43,331 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 18:22:43,331 - __main__ - INFO - Found pending job: 1dfd3eb8-2028-4c4d-8daa-b33e3c8eeb2b
+2025-11-13 18:22:43,636 - __main__ - ERROR - Worker error: module 'queue' has no attribute 'LifoQueue'
+Traceback (most recent call last):
+  File "/home/aly/ats/backend/ingest/worker.py", line 112, in run_worker
+    process_job(queue, job.job_id, enable_ocr=enable_ocr)
+  File "/home/aly/ats/backend/ingest/worker.py", line 50, in process_job
+    from backend.ingest.loader import load_documents
+  File "/home/aly/ats/backend/ingest/loader.py", line 19, in <module>
+    from llama_index.core import Document
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/__init__.py", line 23, in <module>
+    from llama_index.core.base.response.schema import Response
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/base/response/schema.py", line 9, in <module>
+    from llama_index.core.schema import NodeWithScore
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/schema.py", line 31, in <module>
+    import requests
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 67, in <module>
+    class ConnectionPool:
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 79, in ConnectionPool
+    QueueCls = queue.LifoQueue
+               ^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'LifoQueue'
+
+2025-11-13 18:23:05,110 - backend.ingest.queue - INFO - Queue database initialized at /tmp/tmpq7dnimku/e2e_test.db
+2025-11-13 18:23:05,110 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 18:23:05,111 - __main__ - INFO - Found pending job: d234c704-bddf-4b06-b545-f36e9be0ac68
+2025-11-13 18:23:05,390 - __main__ - ERROR - Worker error: module 'queue' has no attribute 'LifoQueue'
+Traceback (most recent call last):
+  File "/home/aly/ats/backend/ingest/worker.py", line 112, in run_worker
+    process_job(queue, job.job_id, enable_ocr=enable_ocr)
+  File "/home/aly/ats/backend/ingest/worker.py", line 50, in process_job
+    from backend.ingest.loader import load_documents
+  File "/home/aly/ats/backend/ingest/loader.py", line 19, in <module>
+    from llama_index.core import Document
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/__init__.py", line 23, in <module>
+    from llama_index.core.base.response.schema import Response
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/base/response/schema.py", line 9, in <module>
+    from llama_index.core.schema import NodeWithScore
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/schema.py", line 31, in <module>
+    import requests
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 67, in <module>
+    class ConnectionPool:
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 79, in ConnectionPool
+    QueueCls = queue.LifoQueue
+               ^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'LifoQueue'
+
+2025-11-13 18:23:45,000 - backend.ingest.queue - INFO - Queue database initialized at /tmp/tmpwgvhbrvt/e2e_test.db
+2025-11-13 18:23:45,001 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 18:23:45,001 - __main__ - INFO - Found pending job: 524d1884-b456-487e-b07f-40b9d42b1db6
+2025-11-13 18:23:45,287 - __main__ - ERROR - Worker error: module 'queue' has no attribute 'LifoQueue'
+Traceback (most recent call last):
+  File "/home/aly/ats/backend/ingest/worker.py", line 112, in run_worker
+    process_job(queue, job.job_id, enable_ocr=enable_ocr)
+  File "/home/aly/ats/backend/ingest/worker.py", line 50, in process_job
+    from backend.ingest.loader import load_documents
+  File "/home/aly/ats/backend/ingest/loader.py", line 19, in <module>
+    from llama_index.core import Document
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/__init__.py", line 23, in <module>
+    from llama_index.core.base.response.schema import Response
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/base/response/schema.py", line 9, in <module>
+    from llama_index.core.schema import NodeWithScore
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/schema.py", line 31, in <module>
+    import requests
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 67, in <module>
+    class ConnectionPool:
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 79, in ConnectionPool
+    QueueCls = queue.LifoQueue
+               ^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'LifoQueue'
+
+2025-11-13 18:24:03,711 - backend.ingest.queue - INFO - Queue database initialized at ./test_worker_debug.db
+2025-11-13 18:24:03,711 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 18:24:03,711 - __main__ - INFO - One-time mode: no pending jobs, exiting
+2025-11-13 18:59:22,731 - backend.ingest.queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 18:59:22,731 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 18:59:22,732 - __main__ - INFO - Found pending job: 459dc2f4-03e4-4dae-a121-4dcb20c7c983
+2025-11-13 18:59:23,076 - __main__ - ERROR - Worker error: module 'queue' has no attribute 'LifoQueue'
+Traceback (most recent call last):
+  File "/home/aly/ats/backend/ingest/worker.py", line 112, in run_worker
+    process_job(queue, job.job_id, enable_ocr=enable_ocr)
+  File "/home/aly/ats/backend/ingest/worker.py", line 50, in process_job
+    from backend.ingest.loader import load_documents
+  File "/home/aly/ats/backend/ingest/loader.py", line 19, in <module>
+    from llama_index.core import Document
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/__init__.py", line 23, in <module>
+    from llama_index.core.base.response.schema import Response
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/base/response/schema.py", line 9, in <module>
+    from llama_index.core.schema import NodeWithScore
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/schema.py", line 31, in <module>
+    import requests
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 67, in <module>
+    class ConnectionPool:
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 79, in ConnectionPool
+    QueueCls = queue.LifoQueue
+               ^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'LifoQueue'
+
+2025-11-13 19:01:35,260 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 19:01:35,260 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 19:01:35,261 - __main__ - INFO - Found pending job: 459dc2f4-03e4-4dae-a121-4dcb20c7c983
+2025-11-13 19:01:35,703 - __main__ - ERROR - Worker error: module 'queue' has no attribute 'LifoQueue'
+Traceback (most recent call last):
+  File "/home/aly/ats/backend/ingest/worker.py", line 112, in run_worker
+    process_job(queue, job.job_id, enable_ocr=enable_ocr)
+  File "/home/aly/ats/backend/ingest/worker.py", line 50, in process_job
+    from backend.ingest.loader import load_documents
+  File "/home/aly/ats/backend/ingest/loader.py", line 19, in <module>
+    from llama_index.core import Document
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/__init__.py", line 23, in <module>
+    from llama_index.core.base.response.schema import Response
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/base/response/schema.py", line 9, in <module>
+    from llama_index.core.schema import NodeWithScore
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/schema.py", line 31, in <module>
+    import requests
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 67, in <module>
+    class ConnectionPool:
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 79, in ConnectionPool
+    QueueCls = queue.LifoQueue
+               ^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'LifoQueue'
+
+2025-11-13 19:02:00,982 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 19:02:00,982 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 19:02:00,982 - __main__ - INFO - Found pending job: 459dc2f4-03e4-4dae-a121-4dcb20c7c983
+2025-11-13 19:02:01,272 - __main__ - ERROR - Worker error: module 'queue' has no attribute 'LifoQueue'
+Traceback (most recent call last):
+  File "/home/aly/ats/backend/ingest/worker.py", line 112, in run_worker
+    process_job(queue, job.job_id, enable_ocr=enable_ocr)
+  File "/home/aly/ats/backend/ingest/worker.py", line 50, in process_job
+    from backend.ingest.loader import load_documents
+  File "/home/aly/ats/backend/ingest/loader.py", line 19, in <module>
+    from llama_index.core import Document
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/__init__.py", line 23, in <module>
+    from llama_index.core.base.response.schema import Response
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/base/response/schema.py", line 9, in <module>
+    from llama_index.core.schema import NodeWithScore
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/llama_index/core/schema.py", line 31, in <module>
+    import requests
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 67, in <module>
+    class ConnectionPool:
+  File "/home/aly/ats/.env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 79, in ConnectionPool
+    QueueCls = queue.LifoQueue
+               ^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'LifoQueue'
+
+2025-11-13 19:02:40,497 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 19:02:40,497 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 19:02:40,498 - __main__ - INFO - Found pending job: 459dc2f4-03e4-4dae-a121-4dcb20c7c983
+2025-11-13 19:02:42,945 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-13 19:02:42,945 - __main__ - INFO - Processing job 459dc2f4-03e4-4dae-a121-4dcb20c7c983: cv_uploads/test.txt
+2025-11-13 19:02:42,954 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:02:42,955 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:02:42,956 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:02:42,956 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:02:42,956 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:02:42,957 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:02:42,964 - backend.ingest.job_queue - INFO - Job 459dc2f4-03e4-4dae-a121-4dcb20c7c983 completed
+2025-11-13 19:02:42,964 - __main__ - INFO - One-time mode: processed one job, exiting
+2025-11-13 19:03:22,925 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 19:03:22,925 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 19:03:22,926 - __main__ - INFO - Found pending job: 2a20125a-b413-487a-ac49-554374e2aa14
+2025-11-13 19:03:24,501 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-13 19:03:24,502 - __main__ - INFO - Processing job 2a20125a-b413-487a-ac49-554374e2aa14: cv_uploads/test.txt
+2025-11-13 19:03:24,511 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,511 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,511 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,512 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,512 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,512 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,521 - backend.ingest.job_queue - INFO - Job 2a20125a-b413-487a-ac49-554374e2aa14 completed
+2025-11-13 19:03:24,522 - __main__ - INFO - Found pending job: 817b13b2-2732-4963-a732-e6ffbf952c7e
+2025-11-13 19:03:24,522 - __main__ - INFO - Processing job 817b13b2-2732-4963-a732-e6ffbf952c7e: cv_uploads/test.txt
+2025-11-13 19:03:24,530 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,531 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,531 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,531 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,531 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,531 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,540 - backend.ingest.job_queue - INFO - Job 817b13b2-2732-4963-a732-e6ffbf952c7e completed
+2025-11-13 19:03:24,541 - __main__ - INFO - Found pending job: 9823f439-a52e-4c1f-ae0c-6a9956620c10
+2025-11-13 19:03:24,541 - __main__ - INFO - Processing job 9823f439-a52e-4c1f-ae0c-6a9956620c10: cv_uploads/test.txt
+2025-11-13 19:03:24,549 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,550 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,550 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,550 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,551 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,551 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,559 - backend.ingest.job_queue - INFO - Job 9823f439-a52e-4c1f-ae0c-6a9956620c10 completed
+2025-11-13 19:03:24,559 - __main__ - INFO - Found pending job: 5a696593-5a16-43b8-812e-d877d8690d7c
+2025-11-13 19:03:24,560 - __main__ - INFO - Processing job 5a696593-5a16-43b8-812e-d877d8690d7c: cv_uploads/test.txt
+2025-11-13 19:03:24,568 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,569 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,569 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,569 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,569 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,569 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,577 - backend.ingest.job_queue - INFO - Job 5a696593-5a16-43b8-812e-d877d8690d7c completed
+2025-11-13 19:03:24,578 - __main__ - INFO - Found pending job: 243a1cb9-1909-4b71-85af-182c90cf1a20
+2025-11-13 19:03:24,578 - __main__ - INFO - Processing job 243a1cb9-1909-4b71-85af-182c90cf1a20: cv_uploads/test.txt
+2025-11-13 19:03:24,588 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,588 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,589 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,589 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,589 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,589 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,599 - backend.ingest.job_queue - INFO - Job 243a1cb9-1909-4b71-85af-182c90cf1a20 completed
+2025-11-13 19:03:24,599 - __main__ - INFO - Found pending job: f9b5f3d5-d18f-4f04-8dc6-7c70faf7fdc6
+2025-11-13 19:03:24,600 - __main__ - INFO - Processing job f9b5f3d5-d18f-4f04-8dc6-7c70faf7fdc6: cv_uploads/test.txt
+2025-11-13 19:03:24,608 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,608 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,609 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,609 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,609 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,609 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,618 - backend.ingest.job_queue - INFO - Job f9b5f3d5-d18f-4f04-8dc6-7c70faf7fdc6 completed
+2025-11-13 19:03:24,618 - __main__ - INFO - Found pending job: 6e1b2c47-7414-4c74-beef-d4362fb23600
+2025-11-13 19:03:24,619 - __main__ - INFO - Processing job 6e1b2c47-7414-4c74-beef-d4362fb23600: cv_uploads/test.txt
+2025-11-13 19:03:24,627 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,627 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,628 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,628 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,628 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,628 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,637 - backend.ingest.job_queue - INFO - Job 6e1b2c47-7414-4c74-beef-d4362fb23600 completed
+2025-11-13 19:03:24,638 - __main__ - INFO - Found pending job: 0725fa56-d178-480a-8229-017ff2a15999
+2025-11-13 19:03:24,638 - __main__ - INFO - Processing job 0725fa56-d178-480a-8229-017ff2a15999: cv_uploads/test.txt
+2025-11-13 19:03:24,645 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,646 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,646 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,647 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,647 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,647 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,655 - backend.ingest.job_queue - INFO - Job 0725fa56-d178-480a-8229-017ff2a15999 completed
+2025-11-13 19:03:24,656 - __main__ - INFO - Found pending job: 9208bcb4-2467-4356-b0c8-fd61bc10eb20
+2025-11-13 19:03:24,656 - __main__ - INFO - Processing job 9208bcb4-2467-4356-b0c8-fd61bc10eb20: cv_uploads/test.txt
+2025-11-13 19:03:24,664 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,664 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,665 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,665 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,665 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,665 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,673 - backend.ingest.job_queue - INFO - Job 9208bcb4-2467-4356-b0c8-fd61bc10eb20 completed
+2025-11-13 19:03:24,674 - __main__ - INFO - Found pending job: 35868234-5d91-4bef-846c-54c5c9d076d8
+2025-11-13 19:03:24,674 - __main__ - INFO - Processing job 35868234-5d91-4bef-846c-54c5c9d076d8: cv_uploads/test.txt
+2025-11-13 19:03:24,683 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,684 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,684 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,684 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,684 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,684 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,693 - backend.ingest.job_queue - INFO - Job 35868234-5d91-4bef-846c-54c5c9d076d8 completed
+2025-11-13 19:03:24,694 - __main__ - INFO - Found pending job: 41952638-db9a-417f-959a-56d61eeb731e
+2025-11-13 19:03:24,694 - __main__ - INFO - Processing job 41952638-db9a-417f-959a-56d61eeb731e: cv_uploads/test.txt
+2025-11-13 19:03:24,702 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,702 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,703 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,703 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,703 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,703 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,712 - backend.ingest.job_queue - INFO - Job 41952638-db9a-417f-959a-56d61eeb731e completed
+2025-11-13 19:03:24,712 - __main__ - INFO - Found pending job: 1211de88-f433-4ec9-aa5a-e5f336c85a61
+2025-11-13 19:03:24,713 - __main__ - INFO - Processing job 1211de88-f433-4ec9-aa5a-e5f336c85a61: cv_uploads/test.txt
+2025-11-13 19:03:24,721 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,722 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,722 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,722 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,722 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,723 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,731 - backend.ingest.job_queue - INFO - Job 1211de88-f433-4ec9-aa5a-e5f336c85a61 completed
+2025-11-13 19:03:24,732 - __main__ - INFO - Found pending job: 42168089-8408-4a11-9402-e336e51f50a0
+2025-11-13 19:03:24,732 - __main__ - INFO - Processing job 42168089-8408-4a11-9402-e336e51f50a0: cv_uploads/test.txt
+2025-11-13 19:03:24,741 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,741 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,741 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,741 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,741 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,742 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,750 - backend.ingest.job_queue - INFO - Job 42168089-8408-4a11-9402-e336e51f50a0 completed
+2025-11-13 19:03:24,751 - __main__ - INFO - Found pending job: 89f30b1b-53a9-4255-b29d-1c3c81871024
+2025-11-13 19:03:24,751 - __main__ - INFO - Processing job 89f30b1b-53a9-4255-b29d-1c3c81871024: cv_uploads/test.txt
+2025-11-13 19:03:24,760 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,760 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,760 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,761 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,761 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,761 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,770 - backend.ingest.job_queue - INFO - Job 89f30b1b-53a9-4255-b29d-1c3c81871024 completed
+2025-11-13 19:03:24,771 - __main__ - INFO - Found pending job: 2f96b218-8ecc-4dc5-bec4-f40986efcfe7
+2025-11-13 19:03:24,771 - __main__ - INFO - Processing job 2f96b218-8ecc-4dc5-bec4-f40986efcfe7: cv_uploads/test.txt
+2025-11-13 19:03:24,780 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,780 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,781 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,781 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,781 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,781 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,795 - backend.ingest.job_queue - INFO - Job 2f96b218-8ecc-4dc5-bec4-f40986efcfe7 completed
+2025-11-13 19:03:24,796 - __main__ - INFO - Found pending job: 030aabd1-eaa0-4e82-a394-cd9693696844
+2025-11-13 19:03:24,796 - __main__ - INFO - Processing job 030aabd1-eaa0-4e82-a394-cd9693696844: cv_uploads/test.txt
+2025-11-13 19:03:24,805 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:03:24,805 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:03:24,805 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:03:24,805 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:03:24,805 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:03:24,805 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:03:24,813 - backend.ingest.job_queue - INFO - Job 030aabd1-eaa0-4e82-a394-cd9693696844 completed
+2025-11-13 19:04:14,821 - __main__ - INFO - Found pending job: 97afb039-95d3-4ba9-b3cc-89aa81521cc4
+2025-11-13 19:04:14,822 - __main__ - INFO - Processing job 97afb039-95d3-4ba9-b3cc-89aa81521cc4: cv_uploads/Aly Mohamed Aly Nasr Resume.pdf
+2025-11-13 19:04:14,832 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-13 19:04:15,274 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-13 19:04:15,274 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-13 19:04:15,593 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-13 19:04:15,593 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-13 19:04:15,733 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-13 19:04:15,733 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-13 19:04:16,081 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-13 19:04:16,081 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-13 19:04:16,406 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-13 19:04:16,406 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-13 19:04:16,606 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-13 19:04:16,606 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-13 19:04:16,955 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-13 19:04:16,955 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-13 19:04:17,334 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-13 19:04:17,334 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-13 19:04:17,452 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-13 19:04:17,453 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-13 19:04:17,534 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-13 19:04:17,535 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-13 19:04:17,814 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-13 19:04:17,814 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-13 19:04:18,093 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-13 19:04:18,093 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-13 19:04:18,174 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-13 19:04:18,174 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-13 19:04:18,534 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-13 19:04:18,534 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-13 19:04:18,847 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-13 19:04:18,848 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-13 19:04:18,947 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-13 19:04:18,948 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-13 19:04:19,208 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-13 19:04:19,209 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-13 19:04:19,322 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-13 19:04:19,322 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-13 19:04:19,521 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-13 19:04:19,521 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-13 19:04:19,879 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-13 19:04:19,879 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-13 19:04:20,121 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-13 19:04:20,121 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-13 19:04:20,301 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-13 19:04:20,301 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-13 19:04:20,546 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-13 19:04:20,546 - backend.ingest.loader - INFO - Total documents loaded: 23
+2025-11-13 19:04:20,546 - __main__ - INFO - Loaded 23 documents from cv_uploads/Aly Mohamed Aly Nasr Resume.pdf
+2025-11-13 19:04:20,555 - backend.ingest.job_queue - INFO - Job 97afb039-95d3-4ba9-b3cc-89aa81521cc4 completed
+2025-11-13 19:05:20,562 - __main__ - INFO - Found pending job: 7a448d1b-1c96-4288-92f2-a2a300bb06d5
+2025-11-13 19:05:20,563 - __main__ - INFO - Processing job 7a448d1b-1c96-4288-92f2-a2a300bb06d5: cv_uploads/Aly Mohamed Aly Nasr Resume.pdf
+2025-11-13 19:05:20,571 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-13 19:05:20,934 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-13 19:05:20,935 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-13 19:05:21,254 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-13 19:05:21,254 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-13 19:05:21,392 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-13 19:05:21,392 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-13 19:05:21,745 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-13 19:05:21,746 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-13 19:05:22,186 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-13 19:05:22,186 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-13 19:05:22,370 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-13 19:05:22,370 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-13 19:05:22,707 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-13 19:05:22,707 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-13 19:05:23,082 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-13 19:05:23,083 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-13 19:05:23,250 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-13 19:05:23,250 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-13 19:05:23,317 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-13 19:05:23,318 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-13 19:05:23,544 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-13 19:05:23,544 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-13 19:05:23,812 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-13 19:05:23,813 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-13 19:05:23,896 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-13 19:05:23,897 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-13 19:05:24,338 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-13 19:05:24,338 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-13 19:05:24,632 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-13 19:05:24,632 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-13 19:05:24,729 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-13 19:05:24,729 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-13 19:05:24,993 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-13 19:05:24,993 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-13 19:05:25,105 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-13 19:05:25,105 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-13 19:05:25,227 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-13 19:05:25,228 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-13 19:05:25,571 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-13 19:05:25,571 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-13 19:05:25,859 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-13 19:05:25,860 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-13 19:05:26,004 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-13 19:05:26,005 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-13 19:05:26,329 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-13 19:05:26,329 - backend.ingest.loader - INFO - Total documents loaded: 23
+2025-11-13 19:05:26,330 - __main__ - INFO - Loaded 23 documents from cv_uploads/Aly Mohamed Aly Nasr Resume.pdf
+2025-11-13 19:05:26,339 - backend.ingest.job_queue - INFO - Job 7a448d1b-1c96-4288-92f2-a2a300bb06d5 completed
+2025-11-13 19:05:36,341 - __main__ - INFO - Found pending job: 71767979-dc79-4bd1-8ed1-445b28575289
+2025-11-13 19:05:36,342 - __main__ - INFO - Processing job 71767979-dc79-4bd1-8ed1-445b28575289: cv_uploads/cvvv.pdf
+2025-11-13 19:05:36,352 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-13 19:05:36,774 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-13 19:05:36,774 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-13 19:05:37,118 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-13 19:05:37,119 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-13 19:05:37,321 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-13 19:05:37,321 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-13 19:05:37,686 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-13 19:05:37,686 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-13 19:05:38,021 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-13 19:05:38,021 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-13 19:05:38,209 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-13 19:05:38,209 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-13 19:05:38,531 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-13 19:05:38,531 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-13 19:05:38,640 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-13 19:05:38,640 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-13 19:05:38,992 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-13 19:05:38,992 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-13 19:05:39,104 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-13 19:05:39,104 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-13 19:05:39,170 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-13 19:05:39,170 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-13 19:05:39,440 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-13 19:05:39,441 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-13 19:05:39,712 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-13 19:05:39,712 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-13 19:05:39,794 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-13 19:05:39,795 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-13 19:05:40,150 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-13 19:05:40,151 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-13 19:05:40,436 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-13 19:05:40,436 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-13 19:05:40,535 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-13 19:05:40,535 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-13 19:05:40,793 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-13 19:05:40,793 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-13 19:05:40,902 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-13 19:05:40,902 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-13 19:05:41,027 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-13 19:05:41,028 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-13 19:05:41,372 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-13 19:05:41,372 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-13 19:05:41,655 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-13 19:05:41,655 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-13 19:05:41,834 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-13 19:05:41,834 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-13 19:05:42,024 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-13 19:05:42,024 - backend.ingest.loader - INFO - Total documents loaded: 24
+2025-11-13 19:05:42,024 - __main__ - INFO - Loaded 24 documents from cv_uploads/cvvv.pdf
+2025-11-13 19:05:42,035 - backend.ingest.job_queue - INFO - Job 71767979-dc79-4bd1-8ed1-445b28575289 completed
+2025-11-13 19:14:52,165 - __main__ - INFO - Found pending job: 308cbc17-fc40-49c4-a308-b41e843d6b83
+2025-11-13 19:14:52,167 - __main__ - INFO - Processing job 308cbc17-fc40-49c4-a308-b41e843d6b83: cv_uploads/test.txt
+2025-11-13 19:14:52,177 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:14:52,178 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:14:52,178 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:14:52,179 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:14:52,179 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:14:52,179 - __main__ - INFO - Loaded 2 documents from cv_uploads/test.txt
+2025-11-13 19:14:52,188 - backend.ingest.job_queue - INFO - Job 308cbc17-fc40-49c4-a308-b41e843d6b83 completed
+2025-11-13 19:15:30,456 - __main__ - INFO - Worker interrupted by user
+2025-11-13 19:15:40,036 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 19:15:40,037 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 19:15:40,037 - __main__ - INFO - One-time mode: no pending jobs, exiting
+2025-11-13 19:18:01,602 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-13 19:18:01,603 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-13 19:18:01,603 - __main__ - INFO - Found pending job: d1768a97-299a-4e44-a140-8971a8eac48a
+2025-11-13 19:18:03,787 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-13 19:18:03,788 - __main__ - INFO - Processing job d1768a97-299a-4e44-a140-8971a8eac48a: cv_uploads/aly.txt
+2025-11-13 19:18:03,796 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-13 19:18:03,796 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-13 19:18:03,797 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-13 19:18:03,797 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-13 19:18:03,797 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-13 19:18:12,404 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-13 19:18:25,891 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-13 19:18:25,919 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-13 19:18:26,142 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-13 19:18:26,142 - __main__ - INFO -   ✓ Parsed and saved: test.txt
+2025-11-13 19:18:26,143 - __main__ - INFO -   ✓ Parsed and saved: aly.txt
+2025-11-13 19:18:26,143 - __main__ - INFO - Loaded 2 documents, parsed 2
+2025-11-13 19:18:26,152 - backend.ingest.job_queue - INFO - Job d1768a97-299a-4e44-a140-8971a8eac48a completed
+2025-11-13 19:18:46,155 - __main__ - INFO - Found pending job: 475a28d1-0aa3-48bd-aaae-dba68812db09
+2025-11-13 19:18:46,156 - __main__ - INFO - Processing job 475a28d1-0aa3-48bd-aaae-dba68812db09: cv_uploads/cvvv.pdf
+2025-11-13 19:18:46,166 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-13 19:18:46,649 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-13 19:18:46,650 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-13 19:18:47,067 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-13 19:18:47,067 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-13 19:18:47,221 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-13 19:18:47,221 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-13 19:18:47,525 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-13 19:18:47,525 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-13 19:18:47,965 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-13 19:18:47,965 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-13 19:18:48,122 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-13 19:18:48,123 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-13 19:18:48,620 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-13 19:18:48,620 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-13 19:18:48,748 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-13 19:18:48,748 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-13 19:18:49,218 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-13 19:18:49,218 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-13 19:18:49,341 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-13 19:18:49,341 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-13 19:18:49,410 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-13 19:18:49,411 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-13 19:18:49,775 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-13 19:18:49,775 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-13 19:18:49,997 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-13 19:18:49,997 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-13 19:18:50,085 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-13 19:18:50,085 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-13 19:18:50,533 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-13 19:18:50,533 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-13 19:18:50,784 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-13 19:18:50,784 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-13 19:18:51,015 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-13 19:18:51,015 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-13 19:18:51,241 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-13 19:18:51,241 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-13 19:18:51,366 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-13 19:18:51,366 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-13 19:18:51,495 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-13 19:18:51,496 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-13 19:18:51,934 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-13 19:18:51,934 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-13 19:18:52,181 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-13 19:18:52,181 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-13 19:18:52,445 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-13 19:18:52,445 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-13 19:18:52,648 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-13 19:18:52,648 - backend.ingest.loader - INFO - Total documents loaded: 24
+2025-11-13 19:18:52,648 - __main__ - INFO -   ✓ Parsed and saved: Suhaila Ahmed Hassan_CV.pdf
+2025-11-13 19:18:52,649 - __main__ - INFO -   ✓ Parsed and saved: Seif_El_Din_Essam_CV.pdf
+2025-11-13 19:18:52,650 - __main__ - INFO -   ✓ Parsed and saved: Toka Ayman Rashed_CV.pdf
+2025-11-13 19:18:52,651 - __main__ - INFO -   ✓ Parsed and saved: Mario Habib Fathi CV.pdf
+2025-11-13 19:18:52,652 - __main__ - INFO -   ✓ Parsed and saved: mayar-mostafa-hassan-resume.pdf
+2025-11-13 19:18:52,652 - __main__ - INFO -   ✓ Parsed and saved: Mohamed Mohy El Deen Lotfy - CV.pdf
+2025-11-13 19:18:52,652 - __main__ - INFO -   ✓ Parsed and saved: Sherif_Shawky_CV.pdf
+2025-11-13 19:18:52,653 - __main__ - INFO -   ✓ Parsed and saved: cvvv.pdf
+2025-11-13 19:18:52,653 - __main__ - INFO -   ✓ Parsed and saved: Israa Mohamed Gaber.pdf
+2025-11-13 19:18:52,653 - __main__ - INFO -   ✓ Parsed and saved: Aly Mohamed Aly.pdf
+2025-11-13 19:18:52,653 - __main__ - INFO -   ✓ Parsed and saved: Soha_Taher_Abdul-Sattar.pdf
+2025-11-13 19:18:52,653 - __main__ - INFO -   ✓ Parsed and saved: Salma-Basem-Elfeel-Resume.pdf
+2025-11-13 19:18:52,654 - __main__ - INFO -   ✓ Parsed and saved: Rania-Ramadan-Gad-CV (2).pdf
+2025-11-13 19:18:52,654 - __main__ - INFO -   ✓ Parsed and saved: MohamedAtef_Cv.pdf
+2025-11-13 19:18:52,654 - __main__ - INFO -   ✓ Parsed and saved: Hend-Khaled-Aly-Resume.pdf
+2025-11-13 19:18:52,654 - __main__ - INFO -   ✓ Parsed and saved: Khalid Ahmed Hegazy - Machine Learning Engineer.pdf
+2025-11-13 19:18:52,655 - __main__ - INFO -   ✓ Parsed and saved: Habiba-Soliman-CV.pdf
+2025-11-13 19:18:52,655 - __main__ - INFO -   ✓ Parsed and saved: Salma_Ashraf_Elhammamy_CV.pdf
+2025-11-13 19:18:52,655 - __main__ - INFO -   ✓ Parsed and saved: Aly Mohamed Aly Nasr Resume.pdf
+2025-11-13 19:18:52,655 - __main__ - INFO -   ✓ Parsed and saved: Aly_Mohamed_Aly_Nasr.pdf
+2025-11-13 19:18:52,656 - __main__ - INFO -   ✓ Parsed and saved: Rowaina_Reda_Resume_ML.pdf
+2025-11-13 19:18:52,656 - __main__ - INFO -   ✓ Parsed and saved: Omnia-Abdulnabi-Resume.pdf
+2025-11-13 19:18:52,656 - __main__ - INFO -   ✓ Parsed and saved: Youssef_Hussain_Mahdy_CV.pdf
+2025-11-13 19:18:52,657 - __main__ - INFO -   ✓ Parsed and saved: Fayrouz Mohamed Galal-CV.pdf
+2025-11-13 19:18:52,657 - __main__ - INFO - Loaded 24 documents, parsed 24
+2025-11-13 19:18:52,667 - backend.ingest.job_queue - INFO - Job 475a28d1-0aa3-48bd-aaae-dba68812db09 completed
+2025-11-13 19:22:44,760 - __main__ - INFO - Worker interrupted by user
+2025-11-14 12:35:58,434 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 12:35:58,435 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 12:35:58,435 - __main__ - INFO - Found pending job: b8cf0873-a956-4baf-83ea-ea29c341ba7c
+2025-11-14 12:36:00,919 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 12:36:00,920 - __main__ - INFO - Processing job b8cf0873-a956-4baf-83ea-ea29c341ba7c: cv_uploads/aly.txt
+2025-11-14 12:36:00,929 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-14 12:36:00,930 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-14 12:36:00,930 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-14 12:36:00,931 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-14 12:36:00,931 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-14 12:36:09,250 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 12:36:22,650 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 12:36:22,674 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 12:36:22,911 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 12:36:23,008 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 12:36:53,733 - __main__ - INFO - Worker interrupted by user
+2025-11-14 12:38:26,108 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 12:38:26,108 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 12:38:26,109 - __main__ - INFO - Found pending job: 4853c024-e25e-4bfd-9c84-d4b2d608e327
+2025-11-14 12:38:28,867 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 12:38:28,867 - __main__ - INFO - Processing job 4853c024-e25e-4bfd-9c84-d4b2d608e327: cv_uploads/aly.txt
+2025-11-14 12:38:28,876 - backend.ingest.loader - INFO - Loading test.txt...
+2025-11-14 12:38:28,876 - backend.ingest.loader - INFO -   ✓ Loaded test.txt (15 chars)
+2025-11-14 12:38:28,877 - backend.ingest.loader - INFO - Loading aly.txt...
+2025-11-14 12:38:28,877 - backend.ingest.loader - INFO -   ✓ Loaded aly.txt (7532 chars)
+2025-11-14 12:38:28,878 - backend.ingest.loader - INFO - Total documents loaded: 2
+2025-11-14 12:38:37,114 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 12:38:49,178 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 12:38:49,200 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 12:38:49,399 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 12:38:49,622 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 12:39:52,455 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 12:39:52,768 - __main__ - INFO -   ✓ Parsed and saved: test.txt
+2025-11-14 12:41:15,565 - __main__ - INFO - Worker interrupted by user
+2025-11-14 12:44:57,810 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 12:44:57,811 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 12:45:52,820 - __main__ - INFO - Found pending job: d36ca760-8a24-41fa-b9ef-f5e575159903
+2025-11-14 12:45:54,939 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 12:45:54,940 - __main__ - INFO - Processing job d36ca760-8a24-41fa-b9ef-f5e575159903: cv_uploads/Aly Mohamed Aly Nasr Resume.pdf
+2025-11-14 12:45:54,949 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 12:45:55,494 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 12:45:55,494 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 12:45:55,873 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 12:45:55,874 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 12:45:56,026 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 12:45:56,027 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-14 12:45:56,475 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-14 12:45:56,475 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-14 12:45:56,854 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-14 12:45:56,854 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-14 12:45:57,120 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-14 12:45:57,121 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 12:45:57,446 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 12:45:57,446 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-14 12:45:57,563 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-14 12:45:57,563 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-14 12:45:58,042 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-14 12:45:58,042 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-14 12:45:58,177 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-14 12:45:58,178 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 12:45:58,250 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 12:45:58,250 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-14 12:45:58,578 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-14 12:45:58,579 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-14 12:45:59,009 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-14 12:45:59,010 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-14 12:45:59,116 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-14 12:45:59,116 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-14 12:45:59,485 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-14 12:45:59,485 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-14 12:45:59,812 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-14 12:45:59,812 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-14 12:46:00,008 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-14 12:46:00,008 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-14 12:46:00,226 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-14 12:46:00,226 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-14 12:46:00,385 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-14 12:46:00,385 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-14 12:46:00,509 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-14 12:46:00,509 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-14 12:46:00,867 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-14 12:46:00,867 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-14 12:46:01,193 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-14 12:46:01,193 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 12:46:01,326 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 12:46:01,326 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-14 12:46:01,568 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-14 12:46:01,569 - backend.ingest.loader - INFO - Total documents loaded: 24
+2025-11-14 12:46:10,281 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 12:46:22,739 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 12:46:22,778 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 12:46:23,065 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 12:46:23,226 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 12:49:01,761 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 12:49:02,398 - __main__ - INFO -   ✓ Parsed and saved: Suhaila Ahmed Hassan_CV.pdf
+2025-11-14 12:50:28,612 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 12:50:39,683 - __main__ - INFO -   ✓ Parsed and saved: Seif_El_Din_Essam_CV.pdf
+2025-11-14 12:50:43,861 - __main__ - INFO - Worker interrupted by user
+2025-11-14 13:01:20,633 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 13:01:20,634 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 13:02:05,641 - __main__ - INFO - Found pending job: add37e1d-d37b-4be6-aaae-223efe3b6b56
+2025-11-14 13:02:08,235 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 13:02:08,236 - __main__ - INFO - Processing job add37e1d-d37b-4be6-aaae-223efe3b6b56: cv_uploads/Seif_El_Din_Essam_CV.pdf
+2025-11-14 13:02:08,244 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 13:02:08,671 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 13:02:08,671 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 13:02:08,978 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 13:02:08,979 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 13:02:09,110 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 13:02:09,110 - backend.ingest.loader - INFO - Loading Mario Habib Fathi CV.pdf...
+2025-11-14 13:02:09,445 - backend.ingest.loader - INFO -   ✓ Loaded Mario Habib Fathi CV.pdf (9403 chars)
+2025-11-14 13:02:09,445 - backend.ingest.loader - INFO - Loading mayar-mostafa-hassan-resume.pdf...
+2025-11-14 13:02:09,772 - backend.ingest.loader - INFO -   ✓ Loaded mayar-mostafa-hassan-resume.pdf (7058 chars)
+2025-11-14 13:02:09,773 - backend.ingest.loader - INFO - Loading Mohamed Mohy El Deen Lotfy - CV.pdf...
+2025-11-14 13:02:09,965 - backend.ingest.loader - INFO -   ✓ Loaded Mohamed Mohy El Deen Lotfy - CV.pdf (3930 chars)
+2025-11-14 13:02:09,965 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 13:02:10,265 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 13:02:10,265 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-14 13:02:10,377 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-14 13:02:10,377 - backend.ingest.loader - INFO - Loading Israa Mohamed Gaber.pdf...
+2025-11-14 13:02:10,784 - backend.ingest.loader - INFO -   ✓ Loaded Israa Mohamed Gaber.pdf (7478 chars)
+2025-11-14 13:02:10,784 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly.pdf...
+2025-11-14 13:02:10,893 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly.pdf (8661 chars)
+2025-11-14 13:02:10,893 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 13:02:10,956 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 13:02:10,956 - backend.ingest.loader - INFO - Loading Salma-Basem-Elfeel-Resume.pdf...
+2025-11-14 13:02:11,216 - backend.ingest.loader - INFO -   ✓ Loaded Salma-Basem-Elfeel-Resume.pdf (5279 chars)
+2025-11-14 13:02:11,216 - backend.ingest.loader - INFO - Loading Rania-Ramadan-Gad-CV (2).pdf...
+2025-11-14 13:02:11,481 - backend.ingest.loader - INFO -   ✓ Loaded Rania-Ramadan-Gad-CV (2).pdf (4666 chars)
+2025-11-14 13:02:11,481 - backend.ingest.loader - INFO - Loading MohamedAtef_Cv.pdf...
+2025-11-14 13:02:11,562 - backend.ingest.loader - INFO -   ✓ Loaded MohamedAtef_Cv.pdf (10145 chars)
+2025-11-14 13:02:11,562 - backend.ingest.loader - INFO - Loading Hend-Khaled-Aly-Resume.pdf...
+2025-11-14 13:02:11,909 - backend.ingest.loader - INFO -   ✓ Loaded Hend-Khaled-Aly-Resume.pdf (6079 chars)
+2025-11-14 13:02:11,909 - backend.ingest.loader - INFO - Loading Khalid Ahmed Hegazy - Machine Learning Engineer.pdf...
+2025-11-14 13:02:12,200 - backend.ingest.loader - INFO -   ✓ Loaded Khalid Ahmed Hegazy - Machine Learning Engineer.pdf (5499 chars)
+2025-11-14 13:02:12,200 - backend.ingest.loader - INFO - Loading Habiba-Soliman-CV.pdf...
+2025-11-14 13:02:12,343 - backend.ingest.loader - INFO -   ✓ Loaded Habiba-Soliman-CV.pdf (5823 chars)
+2025-11-14 13:02:12,344 - backend.ingest.loader - INFO - Loading Salma_Ashraf_Elhammamy_CV.pdf...
+2025-11-14 13:02:12,542 - backend.ingest.loader - INFO -   ✓ Loaded Salma_Ashraf_Elhammamy_CV.pdf (4673 chars)
+2025-11-14 13:02:12,542 - backend.ingest.loader - INFO - Loading Aly Mohamed Aly Nasr Resume.pdf...
+2025-11-14 13:02:12,706 - backend.ingest.loader - INFO -   ✓ Loaded Aly Mohamed Aly Nasr Resume.pdf (7575 chars)
+2025-11-14 13:02:12,706 - backend.ingest.loader - INFO - Loading Aly_Mohamed_Aly_Nasr.pdf...
+2025-11-14 13:02:12,842 - backend.ingest.loader - INFO -   ✓ Loaded Aly_Mohamed_Aly_Nasr.pdf (8661 chars)
+2025-11-14 13:02:12,843 - backend.ingest.loader - INFO - Loading Rowaina_Reda_Resume_ML.pdf...
+2025-11-14 13:02:13,172 - backend.ingest.loader - INFO -   ✓ Loaded Rowaina_Reda_Resume_ML.pdf (4906 chars)
+2025-11-14 13:02:13,173 - backend.ingest.loader - INFO - Loading Omnia-Abdulnabi-Resume.pdf...
+2025-11-14 13:02:13,452 - backend.ingest.loader - INFO -   ✓ Loaded Omnia-Abdulnabi-Resume.pdf (4768 chars)
+2025-11-14 13:02:13,452 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 13:02:13,570 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 13:02:13,570 - backend.ingest.loader - INFO - Loading Fayrouz Mohamed Galal-CV.pdf...
+2025-11-14 13:02:13,811 - backend.ingest.loader - INFO -   ✓ Loaded Fayrouz Mohamed Galal-CV.pdf (4550 chars)
+2025-11-14 13:02:13,811 - backend.ingest.loader - INFO - Total documents loaded: 24
+2025-11-14 13:02:22,088 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 13:02:40,243 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 13:02:40,265 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 13:02:40,496 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 13:02:40,595 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 13:05:24,767 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:05:25,813 - __main__ - INFO -   ✓ Parsed and saved: Suhaila Ahmed Hassan_CV.pdf
+2025-11-14 13:06:55,378 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:07:07,616 - __main__ - INFO -   ✓ Parsed and saved: Seif_El_Din_Essam_CV.pdf
+2025-11-14 13:08:56,597 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:08:56,603 - __main__ - INFO -   ✓ Parsed and saved: Toka Ayman Rashed_CV.pdf
+2025-11-14 13:10:19,789 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:10:19,812 - __main__ - INFO -   ✓ Parsed and saved: Mario Habib Fathi CV.pdf
+2025-11-14 13:12:16,782 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:12:16,798 - __main__ - INFO -   ✓ Parsed and saved: mayar-mostafa-hassan-resume.pdf
+2025-11-14 13:13:41,622 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:13:41,627 - __main__ - INFO -   ✓ Parsed and saved: Mohamed Mohy El Deen Lotfy - CV.pdf
+2025-11-14 13:15:09,250 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:15:44,376 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:15:44,379 - __main__ - INFO -   ✓ Parsed and saved: Sherif_Shawky_CV.pdf
+2025-11-14 13:17:25,241 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:17:25,254 - __main__ - INFO -   ✓ Parsed and saved: cvvv.pdf
+2025-11-14 13:19:52,098 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:19:52,107 - __main__ - INFO -   ✓ Parsed and saved: Israa Mohamed Gaber.pdf
+2025-11-14 13:21:49,699 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:21:49,709 - __main__ - INFO -   ✓ Parsed and saved: Aly Mohamed Aly.pdf
+2025-11-14 13:34:17,539 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 13:34:17,539 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 13:34:52,544 - __main__ - INFO - Found pending job: e24ed615-32f1-47e5-9942-e8be00189756
+2025-11-14 13:34:54,855 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 13:34:54,855 - __main__ - INFO - Processing job e24ed615-32f1-47e5-9942-e8be00189756: cv_uploads/Aly M. _ AI Engineer _ Aqwad.pdf
+2025-11-14 13:34:54,863 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 13:34:55,277 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 13:34:55,277 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 13:34:55,590 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 13:34:55,590 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 13:34:55,728 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 13:34:55,728 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV - Copy.pdf...
+2025-11-14 13:34:56,068 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV - Copy.pdf (5788 chars)
+2025-11-14 13:34:56,068 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 13:34:56,419 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 13:34:56,419 - backend.ingest.loader - INFO - Loading Aly M. _ AI Engineer _ Aqwad.pdf...
+2025-11-14 13:34:56,762 - backend.ingest.loader - INFO -   ✓ Loaded Aly M. _ AI Engineer _ Aqwad.pdf (7023 chars)
+2025-11-14 13:34:56,763 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV - Copy.pdf...
+2025-11-14 13:34:56,932 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV - Copy.pdf (4478 chars)
+2025-11-14 13:34:56,932 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 13:34:56,998 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 13:34:56,998 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV - Copy.pdf...
+2025-11-14 13:34:57,315 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV - Copy.pdf (5644 chars)
+2025-11-14 13:34:57,315 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV - Copy.pdf...
+2025-11-14 13:34:57,453 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV - Copy.pdf (5060 chars)
+2025-11-14 13:34:57,453 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV - Copy.pdf...
+2025-11-14 13:34:57,851 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV - Copy.pdf (5215 chars)
+2025-11-14 13:34:57,851 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar - Copy.pdf...
+2025-11-14 13:34:57,916 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar - Copy.pdf (5098 chars)
+2025-11-14 13:34:57,916 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 13:34:58,041 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 13:34:58,041 - backend.ingest.loader - INFO - Total documents loaded: 13
+2025-11-14 13:35:06,966 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 13:35:19,093 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 13:35:19,116 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 13:35:19,356 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 13:35:19,451 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 13:38:00,075 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:38:00,964 - __main__ - INFO -   ✓ Parsed and saved: Suhaila Ahmed Hassan_CV.pdf
+2025-11-14 13:39:32,425 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:39:36,259 - __main__ - INFO -   ✓ Parsed and saved: Seif_El_Din_Essam_CV.pdf
+2025-11-14 13:41:22,615 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:41:22,620 - __main__ - INFO -   ✓ Parsed and saved: Toka Ayman Rashed_CV.pdf
+2025-11-14 13:42:47,379 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:43:31,124 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:43:31,130 - __main__ - INFO -   ✓ Parsed and saved: Sherif_Shawky_CV - Copy.pdf
+2025-11-14 13:45:00,656 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:45:53,593 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:45:53,596 - __main__ - INFO -   ✓ Parsed and saved: Sherif_Shawky_CV.pdf
+2025-11-14 13:47:15,822 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:47:15,828 - __main__ - INFO -   ✓ Parsed and saved: Aly M. _ AI Engineer _ Aqwad.pdf
+2025-11-14 13:48:27,870 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:48:49,205 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:48:49,207 - __main__ - INFO -   ✓ Parsed and saved: Youssef_Hussain_Mahdy_CV - Copy.pdf
+2025-11-14 13:50:21,468 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:50:22,118 - __main__ - INFO -   ✓ Parsed and saved: Soha_Taher_Abdul-Sattar.pdf
+2025-11-14 13:51:43,915 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:51:44,552 - __main__ - INFO -   ✓ Parsed and saved: Seif_El_Din_Essam_CV - Copy.pdf
+2025-11-14 13:53:30,298 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:53:30,302 - __main__ - INFO -   ✓ Parsed and saved: Toka Ayman Rashed_CV - Copy.pdf
+2025-11-14 13:55:24,594 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:55:24,607 - __main__ - INFO -   ✓ Parsed and saved: Suhaila Ahmed Hassan_CV - Copy.pdf
+2025-11-14 13:57:01,085 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:57:01,764 - __main__ - INFO -   ✓ Parsed and saved: Soha_Taher_Abdul-Sattar - Copy.pdf
+2025-11-14 13:58:13,435 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:58:34,933 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 13:58:34,934 - __main__ - INFO -   ✓ Parsed and saved: Youssef_Hussain_Mahdy_CV.pdf
+2025-11-14 13:58:34,935 - __main__ - INFO - Loaded 13 documents, parsed 13
+2025-11-14 13:58:34,957 - backend.ingest.job_queue - INFO - Job e24ed615-32f1-47e5-9942-e8be00189756 completed
+2025-11-14 13:58:34,967 - __main__ - INFO - Running dedupe on 13 newly created files...
+2025-11-14 13:58:34,983 - backend.parse.dedupe - INFO - Moved duplicate cv_uploads/parsed/Seif_El_Din_Essam_CV.pdf.parsed.json -> cv_uploads/parsed/duplicates/Seif_El_Din_Essam_CV.pdf.parsed.json (key=seifeldinkhalil@outlook.com)
+2025-11-14 13:58:34,983 - backend.parse.dedupe - INFO - Moved duplicate cv_uploads/parsed/Sherif_Shawky_CV - Copy.pdf.parsed.json -> cv_uploads/parsed/duplicates/Sherif_Shawky_CV - Copy.pdf.parsed.json (key=sherifshawky001@gmail.com)
+2025-11-14 13:58:34,984 - backend.parse.dedupe - INFO - Moved duplicate cv_uploads/parsed/Soha_Taher_Abdul-Sattar.pdf.parsed.json -> cv_uploads/parsed/duplicates/Soha_Taher_Abdul-Sattar.pdf.parsed.json (key=sohataher10@gmail.com)
+2025-11-14 13:58:34,984 - backend.parse.dedupe - INFO - Moved duplicate cv_uploads/parsed/Suhaila Ahmed Hassan_CV.pdf.parsed.json -> cv_uploads/parsed/duplicates/Suhaila Ahmed Hassan_CV.pdf.parsed.json (key=suhaila.hassan214@gmail.com)
+2025-11-14 13:58:34,984 - backend.parse.dedupe - INFO - Moved duplicate cv_uploads/parsed/Toka Ayman Rashed_CV.pdf.parsed.json -> cv_uploads/parsed/duplicates/Toka Ayman Rashed_CV.pdf.parsed.json (key=aymantoka112@gmail.com)
+2025-11-14 13:58:34,984 - backend.parse.dedupe - INFO - Moved duplicate cv_uploads/parsed/Youssef_Hussain_Mahdy_CV - Copy.pdf.parsed.json -> cv_uploads/parsed/duplicates/Youssef_Hussain_Mahdy_CV - Copy.pdf.parsed.json (key=youssef.h.alghamry@gmail.com)
+2025-11-14 13:58:34,984 - __main__ - WARNING - Dedupe failed (non-fatal): [Errno 2] No such file or directory: 'cv_uploads/parsed/Seif_El_Din_Essam_CV.pdf.parsed.json'
+2025-11-14 14:02:35,169 - __main__ - INFO - Found pending job: 364f0e7f-19a9-467e-8b87-923acd65a22b
+2025-11-14 14:02:35,175 - __main__ - INFO - Processing job 364f0e7f-19a9-467e-8b87-923acd65a22b: cv_uploads/Aly M. _ AI Engineer _ Aqwad.pdf
+2025-11-14 14:02:35,189 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 14:02:44,537 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 14:02:44,538 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 14:02:44,977 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 14:02:44,977 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 14:02:45,125 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 14:02:45,125 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV - Copy.pdf...
+2025-11-14 14:02:45,547 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV - Copy.pdf (5788 chars)
+2025-11-14 14:02:45,548 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 14:02:45,819 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 14:02:45,819 - backend.ingest.loader - INFO - Loading Aly M. _ AI Engineer _ Aqwad.pdf...
+2025-11-14 14:02:46,255 - backend.ingest.loader - INFO -   ✓ Loaded Aly M. _ AI Engineer _ Aqwad.pdf (7023 chars)
+2025-11-14 14:02:46,255 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV - Copy.pdf...
+2025-11-14 14:02:46,377 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV - Copy.pdf (4478 chars)
+2025-11-14 14:02:46,377 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 14:02:46,446 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 14:02:46,446 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV - Copy.pdf...
+2025-11-14 14:02:46,889 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV - Copy.pdf (5644 chars)
+2025-11-14 14:02:46,890 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV - Copy.pdf...
+2025-11-14 14:02:47,037 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV - Copy.pdf (5060 chars)
+2025-11-14 14:02:47,037 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV - Copy.pdf...
+2025-11-14 14:02:47,523 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV - Copy.pdf (5215 chars)
+2025-11-14 14:02:47,524 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar - Copy.pdf...
+2025-11-14 14:02:47,590 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar - Copy.pdf (5098 chars)
+2025-11-14 14:02:47,590 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 14:02:47,716 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 14:02:47,716 - backend.ingest.loader - INFO - Total documents loaded: 13
+2025-11-14 14:03:49,372 - __main__ - INFO - Worker interrupted by user
+2025-11-14 14:05:20,357 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 14:05:20,358 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 14:05:20,358 - __main__ - INFO - Found pending job: d18772c8-271d-45bc-90e8-e5f3088e21c9
+2025-11-14 14:05:23,025 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 14:05:23,026 - __main__ - INFO - Processing job d18772c8-271d-45bc-90e8-e5f3088e21c9: cv_uploads/cvvv.pdf
+2025-11-14 14:05:23,035 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 14:05:23,491 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 14:05:23,491 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 14:05:23,816 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 14:05:23,816 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 14:05:23,964 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 14:05:23,964 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV - Copy.pdf...
+2025-11-14 14:05:24,288 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV - Copy.pdf (5788 chars)
+2025-11-14 14:05:24,288 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 14:05:24,681 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 14:05:24,681 - backend.ingest.loader - INFO - Loading Aly M. _ AI Engineer _ Aqwad.pdf...
+2025-11-14 14:05:25,024 - backend.ingest.loader - INFO -   ✓ Loaded Aly M. _ AI Engineer _ Aqwad.pdf (7023 chars)
+2025-11-14 14:05:25,024 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV - Copy.pdf...
+2025-11-14 14:05:25,205 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV - Copy.pdf (4478 chars)
+2025-11-14 14:05:25,205 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-14 14:05:25,327 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-14 14:05:25,327 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 14:05:25,396 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 14:05:25,396 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV - Copy.pdf...
+2025-11-14 14:05:25,737 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV - Copy.pdf (5644 chars)
+2025-11-14 14:05:25,737 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV - Copy.pdf...
+2025-11-14 14:05:25,879 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV - Copy.pdf (5060 chars)
+2025-11-14 14:05:25,880 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV - Copy.pdf...
+2025-11-14 14:05:26,334 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV - Copy.pdf (5215 chars)
+2025-11-14 14:05:26,335 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar - Copy.pdf...
+2025-11-14 14:05:26,439 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar - Copy.pdf (5098 chars)
+2025-11-14 14:05:26,439 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 14:05:26,610 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 14:05:26,611 - backend.ingest.loader - INFO - Total documents loaded: 14
+2025-11-14 14:05:38,199 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 14:06:01,102 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 14:06:01,154 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 14:06:01,434 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 14:06:01,496 - ingest_simplified - WARNING - Structured LLM main call failed, falling back to plain LLM: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-11-14 14:06:01,498 - ingest_simplified - ERROR - Plain LLM fallback also failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-11-14 14:06:01,567 - __main__ - INFO -   ✓ Parsed and saved: cvvv.pdf
+2025-11-14 14:06:01,567 - __main__ - INFO - Loaded 1 documents, parsed 1
+2025-11-14 14:06:01,583 - backend.ingest.job_queue - INFO - Job d18772c8-271d-45bc-90e8-e5f3088e21c9 completed
+2025-11-14 14:06:01,583 - __main__ - INFO - Running dedupe on 1 newly created files...
+2025-11-14 14:06:01,586 - backend.parse.dedupe - INFO - Dedupe summary: kept=15 removed=0
+2025-11-14 14:06:01,586 - __main__ - INFO - Dedupe complete: kept=15, removed=0
+2025-11-14 14:06:36,593 - __main__ - INFO - Found pending job: 700ccdeb-3fd6-40e0-a56d-665f7cbd2450
+2025-11-14 14:06:36,594 - __main__ - INFO - Processing job 700ccdeb-3fd6-40e0-a56d-665f7cbd2450: cv_uploads/Aly M. _ AI Engineer _ Aqwad.pdf
+2025-11-14 14:06:36,619 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV.pdf...
+2025-11-14 14:06:37,489 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV.pdf (5215 chars)
+2025-11-14 14:06:37,489 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV.pdf...
+2025-11-14 14:06:37,790 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV.pdf (5644 chars)
+2025-11-14 14:06:37,790 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV.pdf...
+2025-11-14 14:06:37,942 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV.pdf (5060 chars)
+2025-11-14 14:06:37,942 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV - Copy.pdf...
+2025-11-14 14:06:38,453 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV - Copy.pdf (5788 chars)
+2025-11-14 14:06:38,453 - backend.ingest.loader - INFO - Loading Sherif_Shawky_CV.pdf...
+2025-11-14 14:06:38,925 - backend.ingest.loader - INFO -   ✓ Loaded Sherif_Shawky_CV.pdf (5788 chars)
+2025-11-14 14:06:38,925 - backend.ingest.loader - INFO - Loading Aly M. _ AI Engineer _ Aqwad.pdf...
+2025-11-14 14:06:39,401 - backend.ingest.loader - INFO -   ✓ Loaded Aly M. _ AI Engineer _ Aqwad.pdf (7023 chars)
+2025-11-14 14:06:39,401 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV - Copy.pdf...
+2025-11-14 14:06:39,550 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV - Copy.pdf (4478 chars)
+2025-11-14 14:06:39,550 - backend.ingest.loader - INFO - Loading cvvv.pdf...
+2025-11-14 14:06:39,669 - backend.ingest.loader - INFO -   ✓ Loaded cvvv.pdf (8661 chars)
+2025-11-14 14:06:39,670 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar.pdf...
+2025-11-14 14:06:39,741 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar.pdf (5098 chars)
+2025-11-14 14:06:39,741 - backend.ingest.loader - INFO - Loading Seif_El_Din_Essam_CV - Copy.pdf...
+2025-11-14 14:06:40,024 - backend.ingest.loader - INFO -   ✓ Loaded Seif_El_Din_Essam_CV - Copy.pdf (5644 chars)
+2025-11-14 14:06:40,024 - backend.ingest.loader - INFO - Loading Toka Ayman Rashed_CV - Copy.pdf...
+2025-11-14 14:06:40,315 - backend.ingest.loader - INFO -   ✓ Loaded Toka Ayman Rashed_CV - Copy.pdf (5060 chars)
+2025-11-14 14:06:40,315 - backend.ingest.loader - INFO - Loading Suhaila Ahmed Hassan_CV - Copy.pdf...
+2025-11-14 14:06:40,648 - backend.ingest.loader - INFO -   ✓ Loaded Suhaila Ahmed Hassan_CV - Copy.pdf (5215 chars)
+2025-11-14 14:06:40,649 - backend.ingest.loader - INFO - Loading Soha_Taher_Abdul-Sattar - Copy.pdf...
+2025-11-14 14:06:40,718 - backend.ingest.loader - INFO -   ✓ Loaded Soha_Taher_Abdul-Sattar - Copy.pdf (5098 chars)
+2025-11-14 14:06:40,718 - backend.ingest.loader - INFO - Loading Youssef_Hussain_Mahdy_CV.pdf...
+2025-11-14 14:06:41,033 - backend.ingest.loader - INFO -   ✓ Loaded Youssef_Hussain_Mahdy_CV.pdf (4478 chars)
+2025-11-14 14:06:41,033 - backend.ingest.loader - INFO - Total documents loaded: 14
+2025-11-14 14:06:41,098 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 14:09:01,722 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 14:09:01,898 - __main__ - INFO -   ✓ Parsed and saved: Aly M. _ AI Engineer _ Aqwad.pdf
+2025-11-14 14:09:01,899 - __main__ - INFO - Loaded 1 documents, parsed 1
+2025-11-14 14:09:01,932 - backend.ingest.job_queue - INFO - Job 700ccdeb-3fd6-40e0-a56d-665f7cbd2450 completed
+2025-11-14 14:09:01,935 - __main__ - INFO - Running dedupe on 1 newly created files...
+2025-11-14 14:09:01,946 - backend.parse.dedupe - INFO - Dedupe summary: kept=15 removed=0
+2025-11-14 14:09:01,947 - __main__ - INFO - Dedupe complete: kept=15, removed=0
+2025-11-14 14:09:40,532 - __main__ - INFO - Worker interrupted by user
+2025-11-14 14:10:26,736 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 14:10:26,737 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 14:11:11,749 - __main__ - INFO - Found pending job: 4b9d6b5f-3d57-43b4-9017-c5edc047ab6f
+2025-11-14 14:11:14,197 - backend.ingest.loader - WARNING - striprtf not installed. RTF/DOC fallback will be skipped.
+2025-11-14 14:11:14,197 - __main__ - INFO - Processing job 4b9d6b5f-3d57-43b4-9017-c5edc047ab6f: cv_uploads/cvvv.pdf
+2025-11-14 14:11:22,613 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-0.6B
+2025-11-14 14:11:35,837 - sentence_transformers.SentenceTransformer - INFO - 1 prompt is loaded, with the key: query
+2025-11-14 14:11:35,877 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-14 14:11:36,174 - ingest_simplified - INFO - Structured LLM created successfully
+2025-11-14 14:11:36,349 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-11-14 14:13:04,750 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-14 14:13:04,826 - __main__ - INFO -   ✓ Parsed and saved: cvvv.pdf
+2025-11-14 14:13:04,826 - __main__ - INFO - Loaded 1 documents, parsed 1
+2025-11-14 14:13:04,842 - backend.ingest.job_queue - INFO - Job 4b9d6b5f-3d57-43b4-9017-c5edc047ab6f completed
+2025-11-14 14:13:04,843 - __main__ - INFO - Running dedupe on 1 newly created files...
+2025-11-14 14:13:04,846 - backend.parse.dedupe - INFO - Dedupe summary: kept=15 removed=0
+2025-11-14 14:13:04,846 - __main__ - INFO - Dedupe complete: kept=15, removed=0
+2025-11-14 14:59:29,818 - __main__ - INFO - Worker interrupted by user
+2025-11-14 20:17:12,061 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-14 20:17:12,062 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-14 20:20:37,865 - __main__ - INFO - Worker interrupted by user
+2025-11-15 13:24:53,975 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-15 13:24:53,976 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)

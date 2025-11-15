@@ -1,0 +1,17 @@
+esigning, building, and deploying AI systems that can learn from data. Key duties include cleaning and preparing data, developing and testing models, optimizing performance, and integrating them into applications for real-world use. This role requires strong programming skills (often in Python) and a solid foundation in math, statistics, and machine learning frameworks. 
+Core responsibilities
+
+    Design and build ML systems: Create and prototype AI algorithms and end-to-end ML systems, from data ingestion to model serving.
+    Data preparation: Handle data preprocessing, feature engineering, and data cleaning to prepare datasets for model training.
+    Model development and evaluation: Develop, train, and test machine learning models using various frameworks like TensorFlow or PyTorch.
+    Deployment and MLOps: Deploy models into production, build scalable ML pipelines, and implement monitoring and retraining strategies to maintain performance.
+    Collaboration: Work with data scientists, software engineers, and product managers to translate business needs into technical solutions and integrate ML into products.
+    Performance optimization: Monitor and optimize model performance, accuracy, and efficiency in production environments. 
+
+Key skills and qualifications
+
+    Programming: Strong proficiency in programming languages such as Python is essential. Experience with other languages like C++ or Java may also be required.
+    Machine Learning & Math: Deep understanding of machine learning concepts, algorithms, and frameworks (e.g., Scikit-learn, TensorFlow, PyTorch) is critical. A strong grasp of statistics, linear algebra, and calculus is also necessary.
+    Data skills: Expertise in data modeling, data structures, and handling large datasets is required.
+    Problem-solving: Excellent analytical and problem-solving abilities to troubleshoot issues and improve model performance.
+    Tools and technologies: Familiarity with tools for data handling, cloud storage, distributed systems, and infrastructure as code (e.g., Spark, Airflow, Terraform) is often beneficial
