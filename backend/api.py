@@ -816,6 +816,118 @@ async def api_rank_candidates(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.post("/jd/{jd_id}/rank/report", tags=["JD"])
+async def api_rank_candidates_report(
+    jd_id: str,
+    semantic_weight: float = Query(0.4, ge=0.0, le=1.0, description="Weight of semantic (retriever) score in final blend"),
+    top_k: int = Query(20, ge=1, le=200),
+    report_top_k: int = Query(10, ge=1, le=100, description="Number of top candidates to include in PDF report"),
+    x_api_key: Optional[str] = Header(None)
+):
+    """Rank candidates and generate a PDF report in one call.
+
+    Returns the ranking results + PDF file path.
+    """
+    verify_api_key(x_api_key)
+
+    try:
+        # First, rank candidates using the existing logic
+        jd, _ = load_jd_with_original(jd_id, JDS_DIR)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail=f"JD not found: {jd_id}")
+
+    try:
+        # Load parsed CVs from disk
+        cvs = _load_all_parsed_cvs()
+
+        from data_schemas.cv import CVParsed
+
+        # Get semantic resume scores from retriever
+        semantic_map = {}
+        try:
+            retriever = get_retriever()
+            sem_results = retriever.search_by_resume(jd.job_title + "\n" + (jd.description or ""), top_n_resumes=top_k)
+            for r in sem_results:
+                semantic_map[str(r.get('resume_id'))] = r.get('similarity') or 0.0
+        except Exception as e:
+            logger.debug(f"Semantic retriever unavailable: {e}")
+
+        # Build CVParsed list
+        cv_objects = []
+        id_map = {}
+        for stem, raw in cvs:
+            try:
+                cv_obj = CVParsed(**raw)
+                cv_objects.append((stem, cv_obj))
+                id_map[stem] = cv_obj
+            except Exception:
+                logger.debug(f"Failed to construct CVParsed for {stem}")
+
+        # Compute rule-based ranking
+        cv_list = [cv for _, cv in cv_objects]
+        rule_results = rank_all_candidates(jd, cv_list)
+
+        # Attach resume_id & semantic score, blend final score
+        final = []
+        for res in rule_results:
+            matched_resume_id = None
+            for stem, cv in cv_objects:
+                if getattr(cv, 'name', None) and res.candidate_name and cv.name == res.candidate_name:
+                    matched_resume_id = stem
+                    break
+
+            if not matched_resume_id and res.resume_id:
+                matched_resume_id = res.resume_id
+
+            sem_score = semantic_map.get(matched_resume_id, 0.0)
+            blended = (1.0 - semantic_weight) * res.score + semantic_weight * (sem_score or 0.0)
+
+            final.append({
+                'candidate_name': res.candidate_name,
+                'resume_id': matched_resume_id,
+                'rule_score': res.score,
+                'semantic_score': sem_score,
+                'final_score': blended,
+                'matched_must': res.matched_must,
+                'matched_nice': res.matched_nice,
+                'missing_must': res.missing_must,
+                'details': res.details,
+            })
+
+        final_sorted = sorted(final, key=lambda r: r['final_score'], reverse=True)
+
+        # Generate PDF report
+        pdf_path = export_pdf(
+            results=final_sorted,
+            jd_data={
+                'job_title': jd.job_title,
+                'company': jd.company,
+                'location': jd.location,
+                'department': jd.department,
+                'experience': {'minimum_years': getattr(jd.experience, 'minimum_years', None) if jd.experience else None},
+                'education': {'degree_level': getattr(jd.education, 'degree_level', None) if jd.education else None},
+                'skills': {
+                    'must_have': jd.skills.must_have if jd.skills else [],
+                    'nice_to_have': jd.skills.nice_to_have if jd.skills else []
+                }
+            },
+            top_k=report_top_k
+        )
+
+        return {
+            'jd_id': jd_id,
+            'rankings': final_sorted,
+            'pdf_path': pdf_path,
+            'report_generated': True
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Report generation failed for JD {jd_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 # ==================== Error Handlers ====================
 
 @app.exception_handler(HTTPException)
@@ -1084,6 +1196,9 @@ async def root():
             "delete_job": "DELETE /jobs/{job_id}",
             "chat": "POST /chat",
             "chat_session": "GET /chat/{session_id}",
+            "jd_parse": "POST /jd/parse",
+            "jd_rank": "POST /jd/{jd_id}/rank",
+            "jd_rank_report": "POST /jd/{jd_id}/rank/report",
             "export": "POST /export",
             "auth_login": "POST /auth/login"
         },

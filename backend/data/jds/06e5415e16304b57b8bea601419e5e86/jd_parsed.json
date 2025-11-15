@@ -1,0 +1,26 @@
+{
+  "job_title": "machine learning engineer",
+  "company": null,
+  "department": null,
+  "location": null,
+  "skills": {
+    "must_have": [
+      "PyTorch"
+    ],
+    "nice_to_have": []
+  },
+  "education": {
+    "degree_level": null,
+    "fields_of_study": []
+  },
+  "experience": {
+    "minimum_years": null,
+    "preferred_years": null
+  },
+  "description": "Machine learning engineer with experience in pytorch",
+  "responsibilities": [],
+  "benefits": null,
+  "salary_range": null,
+  "created_at": "2025-11-15T13:58:24.056578",
+  "source_file": null
+}

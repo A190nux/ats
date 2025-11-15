@@ -990,3 +990,11 @@ AttributeError: module 'queue' has no attribute 'LifoQueue'
 2025-11-14 20:20:37,865 - __main__ - INFO - Worker interrupted by user
 2025-11-15 13:24:53,975 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
 2025-11-15 13:24:53,976 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-15 14:09:35,793 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-15 14:09:35,793 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-15 15:22:09,978 - __main__ - INFO - Worker interrupted by user
+2025-11-15 15:22:16,181 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-15 15:22:16,182 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-15 15:50:12,932 - backend.ingest.job_queue - INFO - Queue database initialized at ./jobs.db
+2025-11-15 15:50:12,933 - __main__ - INFO - Worker started (OCR: True, poll_interval: 5s)
+2025-11-15 16:17:34,608 - __main__ - INFO - Worker interrupted by user

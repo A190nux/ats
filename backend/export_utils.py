@@ -251,57 +251,166 @@ def export_pdf(
             spaceAfter=30,
             alignment=TA_CENTER,
         )
-        title_text = "Candidate Ranking Report"
+        title_text = "📋 Candidate Ranking Report"
         if jd_data and jd_data.get("job_title"):
             title_text += f" - {jd_data['job_title']}"
         elements.append(Paragraph(title_text, title_style))
 
-        # JD Summary
+        # Report metadata
+        report_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        metadata_style = ParagraphStyle(
+            "Metadata",
+            parent=styles["Normal"],
+            fontSize=9,
+            textColor=colors.HexColor("#666666"),
+            spaceAfter=12,
+            alignment=TA_CENTER,
+        )
+        elements.append(Paragraph(f"Report Generated: {report_date}", metadata_style))
+        elements.append(Spacer(1, 0.2 * inch))
+
+        # JD Summary Section
         if jd_data:
-            jd_summary = f"""
-            <b>Job Description:</b> {jd_data.get('job_title', 'N/A')}<br/>
-            <b>Company:</b> {jd_data.get('company', 'N/A')}<br/>
-            <b>Location:</b> {jd_data.get('location', 'N/A')}<br/>
-            <b>Experience Required:</b> {jd_data.get('experience', {}).get('minimum_years', 'N/A')} years<br/>
-            """
-            elements.append(Paragraph(jd_summary, styles["Normal"]))
+            elements.append(Paragraph("<b>📌 Job Description Summary</b>", styles["Heading2"]))
+            
+            # Create job details table
+            jd_details = [
+                ["Field", "Value"],
+                ["Job Title", jd_data.get('job_title', 'N/A')],
+                ["Company", jd_data.get('company', 'N/A')],
+                ["Location", jd_data.get('location', 'N/A')],
+                ["Department", jd_data.get('department', 'N/A')],
+                ["Min. Experience", f"{jd_data.get('experience', {}).get('minimum_years', 'N/A')} years"],
+                ["Education", jd_data.get('education', {}).get('degree_level', 'N/A')],
+            ]
+            
+            jd_table = Table(jd_details, colWidths=[1.5 * inch, 4.0 * inch])
+            jd_table.setStyle(
+                TableStyle(
+                    [
+                        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#2c5aa0")),
+                        ("TEXTCOLOR", (0, 0), (-1, 0), colors.whitesmoke),
+                        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                        ("FONTSIZE", (0, 0), (-1, 0), 11),
+                        ("ALIGN", (0, 0), (-1, -1), "LEFT"),
+                        ("FONTNAME", (0, 0), (0, -1), "Helvetica-Bold"),
+                        ("FONTSIZE", (0, 1), (-1, -1), 10),
+                        ("GRID", (0, 0), (-1, -1), 1, colors.HexColor("#cccccc")),
+                        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.HexColor("#f9f9f9"), colors.white]),
+                        ("TOPPADDING", (0, 0), (-1, -1), 8),
+                        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+                    ]
+                )
+            )
+            elements.append(jd_table)
+            
+            # Skills section
+            skills_data = jd_data.get("skills", {})
+            if skills_data:
+                elements.append(Spacer(1, 0.2 * inch))
+                elements.append(Paragraph("<b>Required Skills</b>", styles["Heading3"]))
+                
+                must_have = skills_data.get("must_have", [])
+                nice_to_have = skills_data.get("nice_to_have", [])
+                
+                skills_text = ""
+                if must_have:
+                    skills_text += f"<b>Must-Have:</b> {', '.join(must_have[:10])}"
+                    if len(must_have) > 10:
+                        skills_text += f", ... and {len(must_have) - 10} more<br/>"
+                    else:
+                        skills_text += "<br/>"
+                
+                if nice_to_have:
+                    skills_text += f"<b>Nice-to-Have:</b> {', '.join(nice_to_have[:10])}"
+                    if len(nice_to_have) > 10:
+                        skills_text += f", ... and {len(nice_to_have) - 10} more"
+                
+                if skills_text:
+                    elements.append(Paragraph(skills_text, styles["Normal"]))
+            
             elements.append(Spacer(1, 0.3 * inch))
 
-        # Rankings table
-        elements.append(Paragraph("<b>Top Candidates</b>", styles["Heading2"]))
+        # Summary Statistics
+        elements.append(Paragraph("<b>📊 Ranking Summary</b>", styles["Heading2"]))
+        
+        top_candidates = results[:top_k] if results else []
+        if top_candidates:
+            avg_score = sum(r.get('final_score', 0) if 'final_score' in r else r.get('score', 0) for r in top_candidates) / len(top_candidates)
+            top_score = max(r.get('final_score', 0) if 'final_score' in r else r.get('score', 0) for r in top_candidates) if top_candidates else 0
+            
+            summary_data = [
+                ["Metric", "Value"],
+                ["Total Candidates Evaluated", str(len(results))],
+                ["Top Candidates Shown", str(len(top_candidates))],
+                ["Highest Score", f"{top_score:.2%}"],
+                ["Average Score (Top 10)", f"{avg_score:.2%}"],
+            ]
+            
+            summary_table = Table(summary_data, colWidths=[2.5 * inch, 2.5 * inch])
+            summary_table.setStyle(
+                TableStyle(
+                    [
+                        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#2c5aa0")),
+                        ("TEXTCOLOR", (0, 0), (-1, 0), colors.whitesmoke),
+                        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                        ("FONTSIZE", (0, 0), (-1, 0), 11),
+                        ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+                        ("FONTSIZE", (0, 1), (-1, -1), 10),
+                        ("GRID", (0, 0), (-1, -1), 1, colors.HexColor("#cccccc")),
+                        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.HexColor("#f9f9f9"), colors.white]),
+                        ("TOPPADDING", (0, 0), (-1, -1), 10),
+                        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+                    ]
+                )
+            )
+            elements.append(summary_table)
 
-        table_data = [["Rank", "Candidate", "Score", "Matched Skills", "Missing Skills"]]
-        for idx, result in enumerate(results[:top_k], 1):
-            matched = ", ".join(result.get("matched_must", [])[:3])
-            missing = ", ".join(result.get("missing_must", [])[:3])
-            if len(result.get("missing_must", [])) > 3:
-                missing += "..."
-            if len(result.get("matched_must", [])) > 3:
-                matched += "..."
+        # Top Candidates Table
+        elements.append(Spacer(1, 0.3 * inch))
+        elements.append(Paragraph("<b>🎯 Top Candidates</b>", styles["Heading2"]))
 
+        table_data = [["Rank", "Candidate Name", "Final Score", "Matched Must", "Missing Must", "Est. Exp."]]
+        
+        for idx, result in enumerate(top_candidates, 1):
+            final_score = result.get('final_score', 0) if 'final_score' in result else result.get('score', 0)
+            matched = ", ".join(result.get("matched_must", [])[:2])
+            missing = ", ".join(result.get("missing_must", [])[:2])
+            
+            if len(result.get("missing_must", [])) > 2:
+                missing += f" +{len(result.get('missing_must', [])) - 2}"
+            if len(result.get("matched_must", [])) > 2:
+                matched += f" +{len(result.get('matched_must', [])) - 2}"
+
+            exp_years = result.get("details", {}).get("cv_years_est", "N/A")
+            
             table_data.append(
                 [
                     str(idx),
-                    result.get("candidate_name", "Unknown"),
-                    f"{result.get('score', 0):.0%}",
+                    result.get("candidate_name", "Unknown")[:25],
+                    f"{final_score:.1%}",
                     matched or "None",
                     missing or "None",
+                    str(exp_years),
                 ]
             )
 
-        table = Table(table_data, colWidths=[0.5 * inch, 1.5 * inch, 0.8 * inch, 1.8 * inch, 1.8 * inch])
+        table = Table(table_data, colWidths=[0.5 * inch, 1.8 * inch, 1.0 * inch, 1.3 * inch, 1.3 * inch, 0.6 * inch])
         table.setStyle(
             TableStyle(
                 [
                     ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1f4788")),
                     ("TEXTCOLOR", (0, 0), (-1, 0), colors.whitesmoke),
                     ("ALIGN", (0, 0), (-1, -1), "LEFT"),
+                    ("ALIGN", (2, 0), (2, -1), "CENTER"),
+                    ("ALIGN", (5, 0), (5, -1), "CENTER"),
                     ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-                    ("FONTSIZE", (0, 0), (-1, 0), 12),
+                    ("FONTSIZE", (0, 0), (-1, 0), 11),
                     ("BOTTOMPADDING", (0, 0), (-1, 0), 12),
-                    ("BACKGROUND", (0, 1), (-1, -1), colors.beige),
-                    ("GRID", (0, 0), (-1, -1), 1, colors.black),
-                    ("FONTSIZE", (0, 1), (-1, -1), 10),
+                    ("TOPPADDING", (0, 1), (-1, -1), 6),
+                    ("BOTTOMPADDING", (0, 1), (-1, -1), 6),
+                    ("GRID", (0, 0), (-1, -1), 1, colors.HexColor("#666666")),
+                    ("FONTSIZE", (0, 1), (-1, -1), 9),
                     ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f5f5f5")]),
                 ]
             )
@@ -309,9 +418,16 @@ def export_pdf(
         elements.append(table)
 
         # Footer
-        elements.append(Spacer(1, 0.5 * inch))
-        footer_text = f"Report generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        elements.append(Paragraph(footer_text, styles["Normal"]))
+        elements.append(Spacer(1, 0.4 * inch))
+        footer_style = ParagraphStyle(
+            "Footer",
+            parent=styles["Normal"],
+            fontSize=8,
+            textColor=colors.HexColor("#999999"),
+            alignment=TA_CENTER,
+        )
+        footer_text = f"ATS Report | Generated: {report_date}<br/>This report contains confidential information intended for authorized hiring team members only."
+        elements.append(Paragraph(footer_text, footer_style))
 
         # Build PDF
         doc.build(elements)

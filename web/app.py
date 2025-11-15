@@ -58,12 +58,59 @@ def get_session_state():
     return st.session_state
 
 
+# Simple role -> permissions mapping used by the UI (mirrors backend)
+ROLE_PERMISSIONS = {
+    "admin": [
+        "upload_cv",
+        "search_cv",
+        "parse_jd",
+        "rank_candidates",
+        "export_results",
+        "view_analytics",
+        "manage_users",
+        "manage_settings",
+    ],
+    "recruiter": [
+        "upload_cv",
+        "search_cv",
+        "parse_jd",
+        "rank_candidates",
+        "export_results",
+        "view_analytics",
+    ],
+    "viewer": [
+        "search_cv",
+        "view_analytics",
+    ],
+}
+
+
+def has_permission_ui(permission: str) -> bool:
+    """Check current UI user's permissions (simple client-side check).
+
+    This mirrors backend roles but does not replace server-side authorization.
+    """
+    user = st.session_state.get("current_user")
+    if not user:
+        return False
+    role = user.get("role", "viewer")
+    perms = ROLE_PERMISSIONS.get(role, [])
+    return permission in perms
+
+
+
 def make_api_call(method, endpoint, **kwargs):
     """Make API call with error handling."""
     try:
         headers = kwargs.pop("headers", {})
         headers["X-API-Key"] = API_KEY
-        
+        # If we have a user token in session, send it as Bearer authorization
+        try:
+            auth_token = st.session_state.get("auth_token")
+        except Exception:
+            auth_token = None
+        if auth_token:
+            headers["Authorization"] = f"Bearer {auth_token}"
         url = f"{API_BASE_URL}{endpoint}"
         # Increase request timeout to allow longer LLM/RAG processing on the server.
         # This avoids premature frontend "timed out" errors when the backend
@@ -199,14 +246,17 @@ def render_upload_section():
         
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("✅ Upload Files", key="upload_btn", type="primary"):
-                result = upload_files(uploaded_files)
-                if result:
-                    successful = result.get("successful", 0)
-                    failed = result.get("failed", 0)
-                    st.success(f"✅ Uploaded {successful} file(s)")
-                    if failed > 0:
-                        st.warning(f"⚠️ Failed to upload {failed} file(s)")
+            if has_permission_ui("upload_cv"):
+                if st.button("✅ Upload Files", key="upload_btn", type="primary"):
+                    result = upload_files(uploaded_files)
+                    if result:
+                        successful = result.get("successful", 0)
+                        failed = result.get("failed", 0)
+                        st.success(f"✅ Uploaded {successful} file(s)")
+                        if failed > 0:
+                            st.warning(f"⚠️ Failed to upload {failed} file(s)")
+            else:
+                st.info("🔒 You don't have permission to upload files. Please login as a recruiter or admin.")
         
         with col2:
             if st.button("🔄 Clear Files"):
@@ -535,7 +585,82 @@ def render_jd_matching_section():
                     
                     # Export option
                     st.divider()
-                    st.markdown("**Export Results**")
+                    st.markdown("**📋 Export & Report Generation**")
+                    
+                    # Generate PDF Report button (prominent placement)
+                    col_report1, col_report2, col_report3 = st.columns([2, 2, 1])
+                    with col_report1:
+                        report_top_k = st.number_input(
+                            "Top candidates to include in report",
+                            min_value=1,
+                            max_value=min(50, len(rankings)),
+                            value=min(10, len(rankings))
+                        )
+                    with col_report2:
+                        if has_permission_ui("export_results"):
+                            generate_report = st.button(
+                                "📄 Generate PDF Report",
+                                use_container_width=True,
+                                type="primary",
+                                key="gen_pdf_report"
+                            )
+                        else:
+                            st.info("🔒 Report generation: insufficient permissions")
+                            generate_report = False
+                    
+                    if generate_report:
+                        with st.spinner("📄 Generating professional PDF report..."):
+                            try:
+                                # Call the report generation endpoint
+                                report_response = make_api_call(
+                                    "POST",
+                                    f"/jd/{st.session_state.jd_id}/rank/report",
+                                    params={
+                                        "semantic_weight": semantic_weight,
+                                        "top_k": top_k,
+                                        "report_top_k": report_top_k
+                                    }
+                                )
+                                
+                                # Debug: show response if available
+                                if not report_response:
+                                    st.error("❌ No response from API. Check if API is running: `python3 backend/api.py`")
+                                elif "error" in report_response and "pdf_path" not in report_response:
+                                    st.error(f"❌ Report generation failed: {report_response.get('error', 'Unknown error')}")
+                                elif "pdf_path" in report_response:
+                                    pdf_path = report_response["pdf_path"]
+                                    st.success(f"✅ PDF Report Generated!")
+                                    
+                                    # Show download link
+                                    import os
+                                    if os.path.exists(pdf_path):
+                                        with open(pdf_path, 'rb') as f:
+                                            pdf_content = f.read()
+                                            st.download_button(
+                                                label=f"⬇️ Download PDF Report ({len(pdf_content)/1024:.1f} KB)",
+                                                data=pdf_content,
+                                                file_name=os.path.basename(pdf_path),
+                                                mime="application/pdf",
+                                                key=f"pdf_download_{st.session_state.jd_id}"
+                                            )
+                                        st.caption(f"📁 File: {os.path.basename(pdf_path)}")
+                                    else:
+                                        st.error(f"❌ PDF file not found on disk: {pdf_path}")
+                                    
+                                    # Show report preview info
+                                    st.info(f"📊 Report includes top {report_top_k} candidates with detailed match analysis")
+                                else:
+                                    st.warning(f"⚠️ Unexpected response from API: {report_response}")
+                            
+                            except Exception as e:
+                                import traceback
+                                st.error(f"❌ Report error: {str(e)}")
+                                with st.expander("Debug: Show error details"):
+                                    st.code(traceback.format_exc())
+                    
+                    # Standard Export Options
+                    st.markdown("---")
+                    st.markdown("**💾 Export Rankings**")
                     
                     # Format selection
                     col1, col2, col3, col4 = st.columns(4)
@@ -546,10 +671,14 @@ def render_jd_matching_section():
                             label_visibility="collapsed"
                         )
                     
-                    # Export button
+                    # Export button (permission checked)
                     export_clicked = False
                     with col2:
-                        export_clicked = st.button("💾 Export Now", use_container_width=True, type="secondary")
+                        if has_permission_ui("export_results"):
+                            export_clicked = st.button("💾 Export Now", use_container_width=True, type="secondary")
+                        else:
+                            st.info("🔒 Export disabled: insufficient permissions")
+                            export_clicked = False
                     
                     if export_clicked:
                         with st.spinner(f"📤 Exporting as {export_format}..."):
@@ -593,7 +722,7 @@ def render_jd_matching_section():
                             except Exception as e:
                                 st.error(f"❌ Export error: {str(e)}")
                     
-                    # Also show quick download buttons for CSV/JSON
+                    # Also show quick download buttons for CSV/JSON (local quick exports)
                     st.markdown("---")
                     st.markdown("**Quick Export (Local)**")
                     quick_col1, quick_col2 = st.columns(2)
@@ -615,12 +744,16 @@ def render_jd_matching_section():
                         
                         df = pd.DataFrame(csv_data)
                         csv = df.to_csv(index=False)
-                        st.download_button(
-                            label="📥 CSV (Direct)",
-                            data=csv,
-                            file_name=f"jd_ranking_{st.session_state.jd_id[:8]}.csv",
-                            mime="text/csv"
-                        )
+                        # Only allow direct CSV/JSON downloads for users with export permission
+                        if has_permission_ui("export_results"):
+                            st.download_button(
+                                label="📥 CSV (Direct)",
+                                data=csv,
+                                file_name=f"jd_ranking_{st.session_state.jd_id[:8]}.csv",
+                                mime="text/csv"
+                            )
+                        else:
+                            st.info("🔒 Direct downloads disabled: insufficient permissions")
                     
                     with quick_col2:
                         # JSON export
@@ -663,11 +796,15 @@ def render_chat_section():
             st.success("✓ New session created")
             st.rerun()
     with col2:
-        if st.button("📂 Load Session", use_container_width=True):
-            # List available sessions
-            response = make_api_call("GET", "/chat?limit=10")
-            if response and "sessions" in response:
-                st.session_state.available_sessions = response["sessions"]
+        # Only admins may load/list sessions
+        if has_permission_ui("manage_users"):
+            if st.button("📂 Load Session", use_container_width=True):
+                # List available sessions
+                response = make_api_call("GET", "/chat?limit=10")
+                if response and "sessions" in response:
+                    st.session_state.available_sessions = response["sessions"]
+        else:
+            st.info("🔒 Session loading is restricted to admins.")
     with col3:
         if st.button("💾 Save", use_container_width=True):
             st.success("✓ Session saved automatically")
@@ -726,56 +863,62 @@ def render_chat_section():
                     st.error(f"❌ Connection error: {str(e)}")
     
     # Display chat history
-    if st.session_state.chat_history:
-        st.markdown("---")
-        st.markdown("### 📝 Conversation History")
-        
-        # Display in reverse order (newest first)
-        for i, chat in enumerate(reversed(st.session_state.chat_history)):
-            with st.container(border=True):
-                # Question
-                st.markdown(f"**❓ Question:** {chat['question']}")
-                
-                # Answer
-                st.markdown(f"**🤖 Answer:**")
-                st.write(chat['answer'])
-                
-                # Sources
-                if chat['sources']:
-                    st.markdown("**📎 Sources & Candidates:**")
-                    for source in chat['sources']:
-                        col1, col2 = st.columns([3, 1])
-                        with col1:
-                            st.markdown(
-                                f"**{source.get('candidate_name', 'Unknown')}** "
-                                f"({source.get('resume_id', 'N/A')})"
-                            )
-                            st.write(source.get('chunk_text', 'No text'))
-                        with col2:
-                            score = source.get('similarity_score', 0)
-                            st.metric(
-                                "Match",
-                                f"{score:.1%}",
-                                delta=None
-                            )
-                
-                # Metadata
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    st.caption(f"📋 Candidates Reviewed: {chat['num_resumes']}")
-                with col2:
-                    st.caption(f"⏰ {chat['timestamp'].strftime('%Y-%m-%d %H:%M:%S')}")
-                with col3:
-                    if st.button("🗑️ Delete", key=f"delete_chat_{i}"):
-                        st.session_state.chat_history.pop(len(st.session_state.chat_history) - 1 - i)
-                        st.rerun()
-        
-        # Clear history button
-        if st.button("🧹 Clear All Conversation History", use_container_width=True):
-            st.session_state.chat_history = []
-            st.rerun()
+    if not has_permission_ui("manage_users"):
+        st.info("💡 Your conversation is saved but only admins can view full session history.")
     else:
-        st.info("💡 No questions asked yet. Ask something to get started!")
+        if st.session_state.chat_history:
+            st.markdown("---")
+            st.markdown("### 📝 Conversation History")
+            
+            # Display in reverse order (newest first)
+            for i, chat in enumerate(reversed(st.session_state.chat_history)):
+                with st.container():
+                    # Question
+                    st.markdown(f"**❓ Question:** {chat['question']}")
+                    
+                    # Answer
+                    st.markdown(f"**🤖 Answer:**")
+                    st.write(chat['answer'])
+                    
+                    # Sources
+                    if chat['sources']:
+                        st.markdown("**📎 Sources & Candidates:**")
+                        for source in chat['sources']:
+                            col1, col2 = st.columns([3, 1])
+                            with col1:
+                                st.markdown(
+                                    f"**{source.get('candidate_name', 'Unknown')}** "
+                                    f"({source.get('resume_id', 'N/A')})"
+                                )
+                                st.write(source.get('chunk_text', 'No text'))
+                            with col2:
+                                score = source.get('similarity_score', 0)
+                                try:
+                                    st.metric("Match", f"{score:.1%}")
+                                except Exception:
+                                    st.metric("Match", str(score))
+                    
+                    # Metadata
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.caption(f"📋 Candidates Reviewed: {chat.get('num_resumes', '')}")
+                    with col2:
+                        ts = chat.get('timestamp')
+                        if hasattr(ts, 'strftime'):
+                            st.caption(f"⏰ {ts.strftime('%Y-%m-%d %H:%M:%S')}")
+                        else:
+                            st.caption(f"⏰ {ts}")
+                    with col3:
+                        if st.button("🗑️ Delete", key=f"delete_chat_{i}"):
+                            st.session_state.chat_history.pop(len(st.session_state.chat_history) - 1 - i)
+                            st.rerun()
+            
+            # Clear history button
+            if st.button("🧹 Clear All Conversation History", use_container_width=True):
+                st.session_state.chat_history = []
+                st.rerun()
+        else:
+            st.info("💡 No questions asked yet. Ask something to get started!")
 
 
 def render_settings_section():
@@ -825,15 +968,21 @@ def main():
         """)
         return
     
-    # Main tabs
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["📤 Upload", "📊 Dashboard", "📋 Jobs", "🎯 JD Matching", "💬 Chat"])
-    
-    with tab1:
+    # Main tabs (JD Matching visible only to recruiters/admins)
+    tab_labels = ["📤 Upload", "📊 Dashboard", "📋 Jobs"]
+    if has_permission_ui("rank_candidates"):
+        tab_labels.append("🎯 JD Matching")
+    tab_labels.append("💬 Chat")
+
+    tabs = st.tabs(tab_labels)
+    tabs_by_label = {label: tab for label, tab in zip(tab_labels, tabs)}
+
+    with tabs_by_label["📤 Upload"]:
         render_upload_section()
         st.divider()
         render_dashboard_section()
-    
-    with tab2:
+
+    with tabs_by_label["📊 Dashboard"]:
         render_dashboard_section()
         st.divider()
         # Show recent uploads
@@ -842,19 +991,69 @@ def main():
         with col1:
             if st.button("🔄 Refresh Stats"):
                 st.rerun()
-    
-    with tab3:
+
+    with tabs_by_label["📋 Jobs"]:
         render_jobs_section()
-    
-    with tab4:
-        render_jd_matching_section()
-    
-    with tab5:
+
+    if "🎯 JD Matching" in tabs_by_label:
+        with tabs_by_label["🎯 JD Matching"]:
+            render_jd_matching_section()
+
+    with tabs_by_label["💬 Chat"]:
         render_chat_section()
     
     # Sidebar
     with st.sidebar:
         st.markdown("### 🔧 Controls")
+
+        # Login using backend auth if available; fallback to demo role selection
+        st.markdown("**User Login**")
+        if 'current_user' not in st.session_state:
+            st.session_state.current_user = None
+            st.session_state.auth_token = None
+
+        login_col1, login_col2 = st.columns([2, 1])
+        with login_col1:
+            username = st.text_input("Username", value=(st.session_state.current_user.get('username') if st.session_state.current_user else ""))
+            password = st.text_input("Password", type="password")
+            # Role picker for demo fallback (backend determines role on real auth)
+            role = st.selectbox("Role (demo fallback)", ["recruiter", "admin", "viewer"], index=0)
+        with login_col2:
+            if st.button("🔐 Login"):
+                # Try backend authentication first
+                try:
+                    resp = make_api_call("POST", "/auth/login", json={"username": username, "password": password})
+                    if resp and resp.get("token"):
+                        # Successful backend login
+                        st.session_state.auth_token = resp.get("token")
+                        st.session_state.current_user = {
+                            "username": resp.get("username"),
+                            "role": resp.get("role"),
+                            "user_id": resp.get("user_id")
+                        }
+                        st.success(f"Logged in as {st.session_state.current_user['username']} ({st.session_state.current_user['role']})")
+                        st.rerun()
+                    else:
+                        # Fallback to demo role if backend didn't return token
+                        st.info("Backend login failed — using demo role (local only)")
+                        st.session_state.current_user = {"username": username or role, "role": role}
+                        st.session_state.auth_token = None
+                        st.rerun()
+                except Exception as e:
+                    # If any error (API unreachable etc.), fallback to demo login
+                    st.warning(f"Backend auth error: {str(e)} — falling back to demo login")
+                    st.session_state.current_user = {"username": username or role, "role": role}
+                    st.session_state.auth_token = None
+                    st.rerun()
+            if st.button("🔓 Logout"):
+                st.session_state.current_user = None
+                st.session_state.auth_token = None
+                st.success("Logged out")
+                st.rerun()
+
+        if st.session_state.get("current_user"):
+            cu = st.session_state.current_user
+            st.markdown(f"**Current User:** {cu.get('username')} — **Role:** {cu.get('role')} ")
         
         col1, col2 = st.columns(2)
         with col1:
